@@ -1,0 +1,246 @@
+{
+  "id": "C07",
+  "title": "The sea comes and goes",
+  "subtitle": "Tides",
+  "short": "Tides",
+  "trail": "coast",
+  "needs": [],
+  "icon": "tide",
+  "sim": "SIM_TIDE",
+  "seed": 707,
+  "simParams": {
+    "tHigh0": 0.7833
+  },
+  "words": [
+    {
+      "word": "high tide",
+      "meaning": "When the sea comes furthest up the shore.",
+      "icon": "tide"
+    },
+    {
+      "word": "low tide",
+      "meaning": "When it goes furthest out.",
+      "icon": "tide"
+    },
+    {
+      "word": "tide",
+      "meaning": "The sea's slow rise and fall, about twice a day.",
+      "icon": "tide"
+    }
+  ],
+  "hook": {
+    "image": "hook_c07_hajiali.jpg",
+    "alt": "The Haji Ali causeway",
+    "icon": "tide",
+    "lines": [
+      "The path to Haji Ali is sometimes dry and sometimes under the sea.",
+      "Nobody moves it. So what's going on?"
+    ]
+  },
+  "predict": {
+    "question": "Low tide is at 7 am today. When is the next low tide?",
+    "options": [
+      {
+        "id": "a",
+        "text": "About 7 in the evening",
+        "short": "about 7 pm"
+      },
+      {
+        "id": "b",
+        "text": "About 1 in the afternoon",
+        "short": "about 1 pm"
+      },
+      {
+        "id": "c",
+        "text": "Tomorrow at 7 am",
+        "short": "tomorrow at 7 am"
+      }
+    ],
+    "answer": "a"
+  },
+  "watch": {
+    "instruction": "Press Play and watch two days go by.",
+    "duration": 20,
+    "script": [
+      {
+        "t": 0,
+        "set": {
+          "time": 6
+        }
+      },
+      {
+        "t": 0,
+        "caption": "cap1"
+      },
+      {
+        "t": 0.5,
+        "set": {
+          "time": 11
+        },
+        "ease": 5.5
+      },
+      {
+        "t": 6,
+        "caption": "cap2"
+      },
+      {
+        "t": 6,
+        "set": {
+          "time": 30
+        },
+        "ease": 6
+      },
+      {
+        "t": 12,
+        "caption": "cap3"
+      },
+      {
+        "t": 12,
+        "set": {
+          "time": 46
+        },
+        "ease": 6
+      },
+      {
+        "t": 18,
+        "caption": "cap4"
+      }
+    ],
+    "captions": {
+      "cap1": "Low tide soon. The path is dry.",
+      "cap2": "Now the sea is rising. The path goes under.",
+      "cap3": "Two highs and two lows every day.",
+      "cap4": "And each day, it's about 50 minutes later."
+    },
+    "revealMatch": "You predicted about 7 pm. Spot on.",
+    "revealMiss": "Look: the next low came about 12½ hours later, around 7:25 pm."
+  },
+  "explain": {
+    "question": "Why is the path underwater some of the time?",
+    "correct": {
+      "id": "r1",
+      "text": "The sea level rises and falls twice a day, covering the path at high tide."
+    },
+    "misconceptions": [
+      {
+        "id": "m_waves",
+        "text": "Big waves wash over it whenever it is windy.",
+        "parentLabel": "Thinks waves cause tides"
+      },
+      {
+        "id": "m_sinks",
+        "text": "The path slowly sinks into the sea, then floats back up.",
+        "parentLabel": "Thinks land moves"
+      },
+      {
+        "id": "m_rain",
+        "text": "Rain fills the sea up, then it drains away again.",
+        "parentLabel": "Thinks rain causes tides"
+      },
+      {
+        "id": "m_once",
+        "text": "The sea comes in once a day, every morning.",
+        "parentLabel": "Thinks tides are once a day"
+      }
+    ],
+    "examples": {
+      "home": "The Haji Ali path and the wide sands at Juhu at low tide.",
+      "india": "Fishing boats in Mumbai and on the Konkan coast plan around the tide.",
+      "world": "Mont-Saint-Michel in France becomes an island at high tide."
+    },
+    "highlight": {
+      "start": 4,
+      "end": 10,
+      "layer": "waterline",
+      "caption": "Watch the water line climb past the path."
+    }
+  },
+  "nameIt": [
+    {
+      "kind": "word",
+      "prompt": "The path is covered by the sea. What is it?",
+      "promptIcon": "tide",
+      "options": [
+        "high tide",
+        "low tide"
+      ],
+      "answer": 0
+    },
+    {
+      "kind": "word",
+      "prompt": "How many high tides are there in a day, usually?",
+      "options": [
+        "Two",
+        "One",
+        "Ten"
+      ],
+      "answer": 0
+    }
+  ],
+  "twist": {
+    "question": "Heavy rain falls on Mumbai. Will streets flood more at high tide or at low tide?",
+    "options": [
+      {
+        "id": "a",
+        "text": "At high tide"
+      },
+      {
+        "id": "b",
+        "text": "At low tide"
+      },
+      {
+        "id": "c",
+        "text": "It makes no difference"
+      }
+    ],
+    "answer": "a",
+    "reason": "Mumbai's drains empty into the sea. At high tide the sea is up at the drain outlets, so rainwater can't get out."
+  },
+  "faq": [
+    {
+      "q": "But WHY does the sea come and go?",
+      "a": "The Moon's gravity tugs on Earth's oceans, making a bulge of water. As Earth spins, your beach moves into the bulge and out again. Chief Detectives explore this later."
+    },
+    {
+      "q": "Is it dangerous?",
+      "a": "The sea can come in fast. Always check tide times with a grown-up before walking out."
+    },
+    {
+      "q": "Are tides the same every day?",
+      "a": "No. They're about 50 minutes later each day, and some days they're bigger."
+    }
+  ],
+  "knowledgePack": "Most coasts have two high tides and two low tides about every 24 hours 50 minutes, so each tide is about 50 minutes later than the day before. High tides are about 12 hours 25 minutes apart. Tides are caused mainly by the Moon's gravity, with help from the Sun; Earth's spin carries places into and out of the bulges of water. In Mumbai the difference between high and low tide can be several metres. Haji Ali's causeway is usable around low tide and covered around high tide. When heavy rain coincides with high tide, Mumbai floods more because water cannot drain to the sea.",
+  "labChallenges": [
+    {
+      "id": "c07_l1",
+      "type": "reach_state",
+      "text": "Find a time when you could walk to the island.",
+      "check": "causewayCovered == 0"
+    },
+    {
+      "id": "c07_l2",
+      "type": "reach_state",
+      "text": "Find the highest tide in the two days.",
+      "check": "atHighTide == 1"
+    }
+  ],
+  "mission": {
+    "text": "Visit a beach (or Haji Ali) twice in one day, morning and evening. Photograph where the water reaches. Take a grown-up with you.",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Water came further up"
+      },
+      {
+        "id": "b",
+        "text": "Water went further out"
+      },
+      {
+        "id": "c",
+        "text": "Couldn't tell"
+      }
+    ],
+    "debrief": "Compare your photos with the tide times in Sky Today."
+  }
+}

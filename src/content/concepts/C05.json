@@ -1,0 +1,236 @@
+{
+  "id": "C05",
+  "title": "Sea breeze and land breeze",
+  "subtitle": null,
+  "short": "Sea breeze",
+  "trail": "air",
+  "needs": [
+    "C04"
+  ],
+  "icon": "sea_breeze",
+  "sim": "SIM_BREEZE",
+  "seed": 505,
+  "words": [
+    {
+      "word": "sea breeze",
+      "meaning": "A daytime wind from the sea to the land.",
+      "icon": "sea_breeze"
+    },
+    {
+      "word": "land breeze",
+      "meaning": "A night-time wind from the land to the sea.",
+      "icon": "land_breeze"
+    }
+  ],
+  "hook": {
+    "image": "hook_c05_juhu.jpg",
+    "alt": "Juhu beach",
+    "icon": "sea_breeze",
+    "lines": [
+      "At Juhu at noon, the sand burns your feet. The water stays cool.",
+      "That difference makes a wind every single day."
+    ]
+  },
+  "predict": {
+    "question": "It's 3 pm on a sunny day. Which is hotter: the sand or the sea?",
+    "options": [
+      {
+        "id": "a",
+        "icon": "desert",
+        "text": "The sand",
+        "short": "the sand"
+      },
+      {
+        "id": "b",
+        "icon": "sea",
+        "text": "The sea",
+        "short": "the sea"
+      },
+      {
+        "id": "c",
+        "text": "Both the same",
+        "short": "both the same"
+      }
+    ],
+    "answer": "a"
+  },
+  "watch": {
+    "instruction": "Slide the time from morning to night.",
+    "duration": 18,
+    "script": [
+      {
+        "t": 0,
+        "set": {
+          "time": 9
+        }
+      },
+      {
+        "t": 0.1,
+        "set": {
+          "time": 13
+        },
+        "ease": 2.9
+      },
+      {
+        "t": 3,
+        "caption": "cap1"
+      },
+      {
+        "t": 3.1,
+        "set": {
+          "time": 15
+        },
+        "ease": 4.9
+      },
+      {
+        "t": 8,
+        "caption": "cap2"
+      },
+      {
+        "t": 10,
+        "set": {
+          "time": 26
+        },
+        "ease": 4
+      },
+      {
+        "t": 14,
+        "caption": "cap3"
+      }
+    ],
+    "captions": {
+      "cap1": "The sand heats up fast. Warm air rises above it.",
+      "cap2": "Cooler sea air rushes in underneath. Sea breeze!",
+      "cap3": "At night the land cools faster. Now the wind flows out to sea."
+    }
+  },
+  "explain": {
+    "question": "Why does the wind come from the sea in the afternoon?",
+    "correct": {
+      "id": "r1",
+      "text": "The land gets hotter, its air rises, and cool sea air flows in."
+    },
+    "misconceptions": [
+      {
+        "id": "m_waves",
+        "text": "The waves push the air up onto the beach.",
+        "parentLabel": "Thinks waves push air"
+      },
+      {
+        "id": "m_sunpull",
+        "text": "The sun pulls the air towards itself during the day.",
+        "parentLabel": "Thinks the sun pulls wind"
+      },
+      {
+        "id": "m_seahot",
+        "text": "The sea is hotter, so it blows hot air at the land.",
+        "parentLabel": "Thinks the sea is hotter by day"
+      },
+      {
+        "id": "m_tide",
+        "text": "The tide coming in brings the wind with it.",
+        "parentLabel": "Links breeze to tides"
+      }
+    ],
+    "examples": {
+      "home": "The afternoon breeze at Marine Drive and Juhu.",
+      "india": "Chennai's sea is to the east, so its sea breeze comes from the east.",
+      "world": "Perth in Australia has a famous afternoon sea breeze."
+    },
+    "highlight": {
+      "start": 3,
+      "end": 9,
+      "layer": "parcels_loop",
+      "caption": "Watch the warm air rise over the sand, and the cool air slide in low."
+    }
+  },
+  "nameIt": [
+    {
+      "kind": "word",
+      "prompt": "Sunny beach, wind from the sea. What is it?",
+      "promptIcon": "sea_breeze",
+      "options": [
+        "sea breeze",
+        "land breeze"
+      ],
+      "answer": 0
+    },
+    {
+      "kind": "word",
+      "prompt": "Night beach, wind blowing to the sea. What is it?",
+      "promptIcon": "land_breeze",
+      "options": [
+        "sea breeze",
+        "land breeze"
+      ],
+      "answer": 1
+    }
+  ],
+  "twist": {
+    "question": "In Chennai, the sea is to the EAST. Where does the afternoon sea breeze come from?",
+    "options": [
+      {
+        "id": "a",
+        "text": "From the west"
+      },
+      {
+        "id": "b",
+        "text": "From the east"
+      },
+      {
+        "id": "c",
+        "text": "From the north"
+      }
+    ],
+    "answer": "b",
+    "reason": "A sea breeze always comes from the sea. In Chennai, the sea is east."
+  },
+  "faq": [
+    {
+      "q": "Why does sand heat faster than water?",
+      "a": "Sunlight only warms the top of the sand, and water mixes the heat deep down. So sand heats and cools faster."
+    },
+    {
+      "q": "Does it happen every day?",
+      "a": "On most sunny days. Big weather like the monsoon can be stronger."
+    },
+    {
+      "q": "Is the land breeze weaker?",
+      "a": "Usually, yes."
+    }
+  ],
+  "knowledgePack": "Land heats up and cools down faster than water. By day, the land is warmer than the sea, air over the land warms and rises, and cooler air from the sea flows in near the ground: a sea breeze. At night the land cools below the sea's temperature and the flow reverses: a land breeze. Breezes are local and strongest on sunny, calm days. They always come from the cooler surface. In Mumbai the sea is west; in Chennai the sea is east. Larger weather systems like the monsoon can override breezes.",
+  "labChallenges": [
+    {
+      "id": "c05_l1",
+      "type": "reach_state",
+      "text": "Find a time when there is no breeze at all.",
+      "check": "calm == 1"
+    },
+    {
+      "id": "c05_l2",
+      "type": "is_it_possible",
+      "text": "Could a city with the sea in the east get a sea breeze from the west?",
+      "answer": "no",
+      "reason": "A sea breeze comes from the sea. If the sea is east, so is the breeze."
+    }
+  ],
+  "mission": {
+    "text": "At about 4 pm, look at flags or leaves near a big window or the seaside. Where is the wind coming from? Take a grown-up with you if you go out.",
+    "answers": [
+      {
+        "id": "a",
+        "text": "From the sea"
+      },
+      {
+        "id": "b",
+        "text": "From the land"
+      },
+      {
+        "id": "c",
+        "text": "Calm"
+      }
+    ],
+    "debrief": "Check Sky Today too. Did the data agree with your eyes?"
+  }
+}

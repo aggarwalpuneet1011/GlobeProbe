@@ -1,0 +1,75 @@
+{
+  "id": "D5",
+  "title": "High tide or low tide?",
+  "concept": "C07",
+  "sides": [
+    {
+      "id": "high",
+      "label": "High tide",
+      "icon": "tide"
+    },
+    {
+      "id": "low",
+      "label": "Low tide",
+      "icon": "tide"
+    }
+  ],
+  "items": [
+    {
+      "id": "D5_1",
+      "side": "high",
+      "reason": "The sea has risen over the path.",
+      "kind": "text",
+      "text": "The Haji Ali path is underwater."
+    },
+    {
+      "id": "D5_2",
+      "side": "low",
+      "reason": "The sea has gone out.",
+      "kind": "text",
+      "text": "Wide wet sand at Juhu, with crabs."
+    },
+    {
+      "id": "D5_3",
+      "side": "high",
+      "reason": "The water is at its highest.",
+      "kind": "text",
+      "text": "Boats float right up to the jetty."
+    },
+    {
+      "id": "D5_4",
+      "side": "low",
+      "reason": "Water left behind as the sea goes out.",
+      "kind": "text",
+      "text": "Rock pools appear on the shore."
+    },
+    {
+      "id": "D5_5",
+      "side": "high",
+      "reason": "Drains can't empty into a high sea.",
+      "kind": "text",
+      "text": "If it rains hard now, streets flood more."
+    },
+    {
+      "id": "D5_6",
+      "side": "low",
+      "reason": "The path is uncovered.",
+      "kind": "text",
+      "text": "You can walk across to the island."
+    },
+    {
+      "id": "D5_7",
+      "side": "high",
+      "reason": "High water cuts it off.",
+      "kind": "text",
+      "text": "Mont-Saint-Michel has water all around it."
+    },
+    {
+      "id": "D5_8",
+      "side": "low",
+      "reason": "The mud is uncovered when the sea is out.",
+      "kind": "text",
+      "text": "Mudflats shine near the mangroves."
+    }
+  ]
+}

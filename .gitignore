@@ -1,0 +1,14 @@
+node_modules/
+.expo/
+dist/
+web-build/
+*.apk
+*.aab
+*.log
+.DS_Store
+.env
+.env.*
+# The Gemini API key is entered inside the app and kept in the Android keystore. Never commit one.
+desktop.ini
+# Local build notes, not published
+BUILD_NOTES.md

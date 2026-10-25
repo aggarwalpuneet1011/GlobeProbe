@@ -1,0 +1,433 @@
+{
+  "places": [
+    {
+      "id": "mumbai",
+      "name": "Mumbai",
+      "country": "India",
+      "lat": 19.08,
+      "lon": 72.88,
+      "concepts": [
+        "C06",
+        "C07",
+        "C08"
+      ],
+      "facts": [
+        {
+          "text": "Windward side of the Western Ghats.",
+          "concept": "C06"
+        },
+        {
+          "text": "Once seven islands.",
+          "concept": "C08"
+        },
+        {
+          "text": "Big tides along its coast.",
+          "concept": "C07"
+        }
+      ],
+      "photo": "place_mumbai.jpg",
+      "icon": "tide"
+    },
+    {
+      "id": "pune",
+      "name": "Pune",
+      "country": "India",
+      "lat": 18.52,
+      "lon": 73.86,
+      "concepts": [
+        "C06"
+      ],
+      "facts": [
+        {
+          "text": "In the rain shadow of the Ghats: far less rain than Mumbai.",
+          "concept": "C06"
+        }
+      ],
+      "photo": "place_pune.jpg",
+      "icon": "desert"
+    },
+    {
+      "id": "lonavala",
+      "name": "Lonavala",
+      "country": "India",
+      "lat": 18.75,
+      "lon": 73.41,
+      "concepts": [
+        "C02",
+        "C06"
+      ],
+      "facts": [
+        {
+          "text": "Up in the Ghats: in the monsoon you drive right through clouds and fog.",
+          "concept": "C02"
+        }
+      ],
+      "photo": "place_lonavala.jpg",
+      "icon": "fog"
+    },
+    {
+      "id": "chennai",
+      "name": "Chennai",
+      "country": "India",
+      "lat": 13.08,
+      "lon": 80.27,
+      "concepts": [
+        "C05"
+      ],
+      "facts": [
+        {
+          "text": "Its sea is to the east, so its sea breeze comes from the east.",
+          "concept": "C05"
+        }
+      ],
+      "photo": "place_chennai.jpg",
+      "icon": "sea_breeze"
+    },
+    {
+      "id": "sohra",
+      "name": "Cherrapunji (Sohra)",
+      "country": "India",
+      "lat": 25.27,
+      "lon": 91.73,
+      "concepts": [
+        "C03",
+        "C06"
+      ],
+      "facts": [
+        {
+          "text": "One of the wettest places on Earth: moist winds are forced up its hills.",
+          "concept": "C06"
+        }
+      ],
+      "photo": "place_sohra.jpg",
+      "icon": "downpour"
+    },
+    {
+      "id": "jaisalmer",
+      "name": "Jaisalmer",
+      "country": "India",
+      "lat": 26.92,
+      "lon": 70.91,
+      "concepts": [
+        "C01"
+      ],
+      "facts": [
+        {
+          "text": "In the Thar Desert: very little rain, very fast evaporation.",
+          "concept": "C01"
+        }
+      ],
+      "photo": "place_jaisalmer.jpg",
+      "icon": "desert"
+    },
+    {
+      "id": "leh",
+      "name": "Leh, Ladakh",
+      "country": "India",
+      "lat": 34.15,
+      "lon": 77.58,
+      "concepts": [
+        "C06"
+      ],
+      "facts": [
+        {
+          "text": "A cold desert behind the Himalayas, in their rain shadow.",
+          "concept": "C06"
+        }
+      ],
+      "photo": "place_leh.jpg",
+      "icon": "mountain"
+    },
+    {
+      "id": "kanyakumari",
+      "name": "Kanyakumari",
+      "country": "India",
+      "lat": 8.09,
+      "lon": 77.54,
+      "concepts": [
+        "C08"
+      ],
+      "facts": [
+        {
+          "text": "The southern tip of the Indian peninsula: sea on three sides.",
+          "concept": "C08"
+        }
+      ],
+      "photo": "place_kanyakumari.jpg",
+      "icon": "peninsula"
+    },
+    {
+      "id": "srilanka",
+      "name": "Sri Lanka",
+      "country": "Sri Lanka",
+      "lat": 7.87,
+      "lon": 80.77,
+      "concepts": [
+        "C06",
+        "C08"
+      ],
+      "facts": [
+        {
+          "text": "An island.",
+          "concept": "C08"
+        },
+        {
+          "text": "Its south-west gets the heaviest monsoon rain.",
+          "concept": "C06"
+        }
+      ],
+      "photo": "place_srilanka.jpg",
+      "icon": "island"
+    },
+    {
+      "id": "everest",
+      "name": "Mount Everest",
+      "country": "Nepal and China",
+      "lat": 27.99,
+      "lon": 86.93,
+      "concepts": [
+        "C02"
+      ],
+      "facts": [
+        {
+          "text": "The highest mountain on land; so high that the air is freezing all year.",
+          "concept": "C02"
+        }
+      ],
+      "photo": "place_everest.jpg",
+      "icon": "mountain"
+    },
+    {
+      "id": "sahara",
+      "name": "Sahara Desert",
+      "country": "Africa",
+      "lat": 23.0,
+      "lon": 12.0,
+      "concepts": [
+        "C01"
+      ],
+      "facts": [
+        {
+          "text": "The biggest hot desert. Air here sinks and warms, so clouds rarely form.",
+          "concept": "C01"
+        }
+      ],
+      "photo": "place_sahara.jpg",
+      "icon": "desert"
+    },
+    {
+      "id": "amazon",
+      "name": "Amazon Rainforest",
+      "country": "South America",
+      "lat": -3.47,
+      "lon": -62.22,
+      "concepts": [
+        "C01",
+        "C02"
+      ],
+      "facts": [
+        {
+          "text": "Near the equator: hot, wet, with rain almost every day.",
+          "concept": "C02"
+        }
+      ],
+      "photo": "place_amazon.jpg",
+      "icon": "rain"
+    },
+    {
+      "id": "greenland",
+      "name": "Greenland",
+      "country": "Greenland",
+      "lat": 72.0,
+      "lon": -40.0,
+      "concepts": [
+        "C08"
+      ],
+      "facts": [
+        {
+          "text": "The world's biggest island, mostly covered in ice.",
+          "concept": "C08"
+        }
+      ],
+      "photo": "place_greenland.jpg",
+      "icon": "island"
+    },
+    {
+      "id": "italy",
+      "name": "Italy",
+      "country": "Italy",
+      "lat": 42.5,
+      "lon": 12.5,
+      "concepts": [
+        "C08"
+      ],
+      "facts": [
+        {
+          "text": "A peninsula shaped like a boot.",
+          "concept": "C08"
+        }
+      ],
+      "photo": "place_italy.jpg",
+      "icon": "peninsula"
+    },
+    {
+      "id": "patagonia",
+      "name": "Patagonia",
+      "country": "Argentina and Chile",
+      "lat": -45.0,
+      "lon": -69.0,
+      "concepts": [
+        "C06"
+      ],
+      "facts": [
+        {
+          "text": "Dry land in the rain shadow of the Andes mountains.",
+          "concept": "C06"
+        }
+      ],
+      "photo": "place_patagonia.jpg",
+      "icon": "plateau"
+    },
+    {
+      "id": "perth",
+      "name": "Perth",
+      "country": "Australia",
+      "lat": -31.95,
+      "lon": 115.86,
+      "concepts": [
+        "C05"
+      ],
+      "facts": [
+        {
+          "text": "Famous for its strong afternoon sea breeze.",
+          "concept": "C05"
+        }
+      ],
+      "photo": "place_perth.jpg",
+      "icon": "sea_breeze"
+    },
+    {
+      "id": "msm",
+      "name": "Mont-Saint-Michel",
+      "country": "France",
+      "lat": 48.64,
+      "lon": -1.51,
+      "concepts": [
+        "C07"
+      ],
+      "facts": [
+        {
+          "text": "A rocky islet that becomes an island at high tide.",
+          "concept": "C07"
+        }
+      ],
+      "photo": "place_msm.jpg",
+      "icon": "tide"
+    },
+    {
+      "id": "antarctica",
+      "name": "Antarctica",
+      "country": "Antarctica",
+      "lat": -82.0,
+      "lon": 0.0,
+      "concepts": [
+        "C01",
+        "C02"
+      ],
+      "facts": [
+        {
+          "text": "The coldest place on Earth, and so dry it counts as a desert.",
+          "concept": "C01"
+        }
+      ],
+      "photo": "place_antarctica.jpg",
+      "icon": "thermometer"
+    },
+    {
+      "id": "britain",
+      "name": "Great Britain",
+      "country": "United Kingdom",
+      "lat": 53.0,
+      "lon": -2.0,
+      "concepts": [
+        "C03",
+        "C08"
+      ],
+      "facts": [
+        {
+          "text": "An island famous for drizzle; once joined to Europe by land.",
+          "concept": "C03"
+        }
+      ],
+      "photo": "place_britain.jpg",
+      "icon": "drizzle"
+    },
+    {
+      "id": "japan",
+      "name": "Japan",
+      "country": "Japan",
+      "lat": 36.2,
+      "lon": 138.25,
+      "concepts": [
+        "C08"
+      ],
+      "facts": [
+        {
+          "text": "A country made of thousands of islands.",
+          "concept": "C08"
+        }
+      ],
+      "photo": "place_japan.jpg",
+      "icon": "island"
+    }
+  ],
+  "finds": [
+    {
+      "id": "f1",
+      "prompt": "a peninsula with sea on three sides",
+      "targets": [
+        "kanyakumari",
+        "italy"
+      ]
+    },
+    {
+      "id": "f2",
+      "prompt": "the world's biggest island",
+      "targets": [
+        "greenland"
+      ]
+    },
+    {
+      "id": "f3",
+      "prompt": "a cold desert",
+      "targets": [
+        "leh",
+        "antarctica"
+      ]
+    },
+    {
+      "id": "f4",
+      "prompt": "a place in a rain shadow",
+      "targets": [
+        "pune",
+        "leh",
+        "patagonia"
+      ]
+    },
+    {
+      "id": "f5",
+      "prompt": "a tidal island",
+      "targets": [
+        "msm"
+      ]
+    },
+    {
+      "id": "f6",
+      "prompt": "a city where the sea breeze comes from the east",
+      "targets": [
+        "chennai"
+      ]
+    }
+  ],
+  "findRadiusKm": 700
+}

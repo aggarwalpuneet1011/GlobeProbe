@@ -1,0 +1,266 @@
+{
+  "id": "case2",
+  "number": 2,
+  "title": "The Missing Path",
+  "needs": [
+    "C07"
+  ],
+  "concepts": [
+    "C07"
+  ],
+  "map": {
+    "caption": "A beach with a stone path out to Pebble Island.",
+    "elements": [
+      {
+        "t": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 200,
+        "fill": "#BFE6FF"
+      },
+      {
+        "t": "rect",
+        "x": 0,
+        "y": 100,
+        "w": 320,
+        "h": 100,
+        "fill": "#1E88C7"
+      },
+      {
+        "t": "poly",
+        "pts": [
+          0,
+          150,
+          0,
+          200,
+          110,
+          200,
+          120,
+          170,
+          60,
+          140
+        ],
+        "fill": "#F3D9A4",
+        "stroke": "#1F2A37"
+      },
+      {
+        "t": "rect",
+        "x": 100,
+        "y": 154,
+        "w": 120,
+        "h": 12,
+        "fill": "#9AA5B1",
+        "stroke": "#1F2A37",
+        "r": 6
+      },
+      {
+        "t": "ellipse",
+        "cx": 252,
+        "cy": 150,
+        "rx": 40,
+        "ry": 20,
+        "fill": "#9AA5B1",
+        "stroke": "#1F2A37"
+      },
+      {
+        "t": "rect",
+        "x": 246,
+        "y": 100,
+        "w": 12,
+        "h": 40,
+        "fill": "#FFFFFF",
+        "stroke": "#1F2A37"
+      },
+      {
+        "t": "tri",
+        "cx": 252,
+        "by": 100,
+        "w": 22,
+        "h": 14,
+        "fill": "#FF6B4A"
+      },
+      {
+        "t": "label",
+        "x": 8,
+        "y": 130,
+        "text": "Beach",
+        "anchor": "start"
+      },
+      {
+        "t": "label",
+        "x": 252,
+        "y": 190,
+        "text": "Pebble Island",
+        "anchor": "middle"
+      }
+    ]
+  },
+  "clues": [
+    {
+      "kind": "note",
+      "text": "Path was dry at 6:00 am today."
+    },
+    {
+      "kind": "tides",
+      "title": "Tide chart (today)",
+      "rows": [
+        {
+          "label": "Low",
+          "time": "6:00 am"
+        },
+        {
+          "label": "High",
+          "time": "12:12 pm"
+        },
+        {
+          "label": "Low",
+          "time": "6:25 pm"
+        },
+        {
+          "label": "High",
+          "time": "12:37 am"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "Can you walk to Pebble Island at noon?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Yes"
+        },
+        {
+          "id": "b",
+          "text": "No"
+        }
+      ],
+      "answer": "b"
+    },
+    {
+      "prompt": "When is the next good time?",
+      "options": [
+        {
+          "id": "a",
+          "text": "About 6:30 pm"
+        },
+        {
+          "id": "b",
+          "text": "Midnight"
+        },
+        {
+          "id": "c",
+          "text": "Tomorrow at noon"
+        }
+      ],
+      "answer": "a"
+    }
+  ],
+  "bigWhy": {
+    "prompt": "Explain why the path keeps disappearing and coming back.",
+    "keyIdeas": [
+      {
+        "id": "k1",
+        "required": true,
+        "text": "the sea level rises and falls (tides)"
+      },
+      {
+        "id": "k2",
+        "required": true,
+        "text": "it happens about twice a day / every 12 hours or so"
+      },
+      {
+        "id": "k3",
+        "required": false,
+        "text": "the times move later each day"
+      }
+    ],
+    "watchFor": [
+      "m_waves",
+      "m_sinks",
+      "m_once"
+    ],
+    "watchConcept": "C07",
+    "chips": [
+      {
+        "label": "The path is covered when",
+        "options": [
+          {
+            "id": "a",
+            "text": "the tide is high"
+          },
+          {
+            "id": "b",
+            "text": "it is windy"
+          },
+          {
+            "id": "c",
+            "text": "it rains"
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "label": "The sea goes out",
+        "options": [
+          {
+            "id": "a",
+            "text": "about twice a day"
+          },
+          {
+            "id": "b",
+            "text": "once a week"
+          },
+          {
+            "id": "c",
+            "text": "only at night"
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "label": "So the next walk is",
+        "options": [
+          {
+            "id": "a",
+            "text": "same time tomorrow"
+          },
+          {
+            "id": "b",
+            "text": "about 12½ hours after the last low"
+          },
+          {
+            "id": "c",
+            "text": "never"
+          }
+        ],
+        "answer": "b"
+      }
+    ]
+  },
+  "twist": {
+    "prompt": "Tomorrow morning, will low tide be at 6:00 am again?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Yes, exactly 6:00"
+      },
+      {
+        "id": "b",
+        "text": "No, about 6:50 am"
+      },
+      {
+        "id": "c",
+        "text": "No, about 5:10 am"
+      }
+    ],
+    "answer": "b",
+    "reason": "Tides come about 50 minutes later each day."
+  },
+  "reveal": {
+    "icon": "tide",
+    "text": "Real tidal paths: Haji Ali in Mumbai, and Mont-Saint-Michel in France, which becomes an island at high tide."
+  }
+}

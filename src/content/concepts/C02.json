@@ -1,0 +1,229 @@
+{
+  "id": "C02",
+  "title": "How a cloud is made",
+  "subtitle": "Condensation",
+  "short": "Clouds",
+  "trail": "water",
+  "needs": [
+    "C01"
+  ],
+  "icon": "condensation",
+  "sim": "SIM_CLOUD",
+  "seed": 202,
+  "words": [
+    {
+      "word": "condensation",
+      "meaning": "Water vapour cooling and turning back into tiny water droplets.",
+      "icon": "condensation"
+    }
+  ],
+  "hook": {
+    "image": "hook_c02_bottle.jpg",
+    "alt": "A cold bottle covered in drops",
+    "icon": "condensation",
+    "lines": [
+      "Take a cold bottle out of the fridge. In a minute, it's covered in drops.",
+      "The same trick makes every cloud in the sky."
+    ]
+  },
+  "predict": {
+    "question": "Those drops outside the cold bottle. Where did they come from?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The bottle leaked",
+        "short": "that the bottle leaked"
+      },
+      {
+        "id": "b",
+        "icon": "humidity",
+        "text": "Water vapour in the air",
+        "short": "water vapour in the air"
+      },
+      {
+        "id": "c",
+        "text": "The fridge was wet",
+        "short": "that the fridge was wet"
+      }
+    ],
+    "answer": "b"
+  },
+  "watch": {
+    "instruction": "Drag the air bubble up into the sky.",
+    "duration": 17,
+    "script": [
+      {
+        "t": 0,
+        "set": {
+          "parcelY": 385
+        }
+      },
+      {
+        "t": 0.5,
+        "set": {
+          "parcelY": 330
+        },
+        "ease": 2.5
+      },
+      {
+        "t": 3,
+        "caption": "cap1"
+      },
+      {
+        "t": 3.5,
+        "set": {
+          "parcelY": 196
+        },
+        "ease": 4.4
+      },
+      {
+        "t": 8,
+        "caption": "cap2"
+      },
+      {
+        "t": 8.5,
+        "set": {
+          "parcelY": 130
+        },
+        "ease": 4.5
+      },
+      {
+        "t": 14,
+        "caption": "cap3"
+      }
+    ],
+    "captions": {
+      "cap1": "Higher up, the air is cooler. See it turn blue?",
+      "cap2": "Cool enough! The vapour turns into tiny droplets.",
+      "cap3": "Millions of droplets together make a cloud."
+    },
+    "revealMatch": "Yes: cold surfaces turn the air's vapour into drops.",
+    "revealMiss": "The drops came from the air, not the bottle."
+  },
+  "explain": {
+    "question": "Why do clouds form high up in the sky?",
+    "correct": {
+      "id": "r1",
+      "text": "Air cools as it rises, so its vapour turns into droplets."
+    },
+    "misconceptions": [
+      {
+        "id": "m_smoke",
+        "text": "Clouds are smoke from factories rising into the sky.",
+        "parentLabel": "Thinks clouds are smoke"
+      },
+      {
+        "id": "m_steam",
+        "text": "Clouds are boiling hot steam from the sea.",
+        "parentLabel": "Thinks clouds are hot steam"
+      },
+      {
+        "id": "m_vapour",
+        "text": "Clouds are made of invisible vapour, not drops.",
+        "parentLabel": "Thinks clouds are vapour"
+      },
+      {
+        "id": "m_cotton",
+        "text": "Clouds are fluffy stuff that floats up from the sea.",
+        "parentLabel": "Thinks clouds are a solid fluff"
+      }
+    ],
+    "examples": {
+      "home": "A bathroom mirror going foggy after a hot bath.",
+      "india": "Monsoon clouds piling up over the Western Ghats.",
+      "world": "Clouds wrapping the tops of mountains everywhere, from the Himalayas to the Alps."
+    },
+    "highlight": {
+      "start": 3,
+      "end": 9,
+      "layer": "parcel_main",
+      "caption": "Watch the bubble's colour as it climbs. Cooler air means droplets."
+    }
+  },
+  "nameIt": [
+    {
+      "kind": "word",
+      "prompt": "What do we call this?",
+      "promptIcon": "condensation",
+      "options": [
+        "condensation",
+        "evaporation",
+        "drizzle"
+      ],
+      "answer": 0
+    },
+    {
+      "kind": "word",
+      "prompt": "A cloud is made of...",
+      "options": [
+        "tiny water droplets",
+        "smoke",
+        "invisible vapour"
+      ],
+      "answer": 0
+    }
+  ],
+  "twist": {
+    "question": "On a cold monsoon morning in Lonavala, a cloud is touching the ground. What is it?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Fog: a cloud at ground level"
+      },
+      {
+        "id": "b",
+        "text": "Smoke from cooking fires"
+      },
+      {
+        "id": "c",
+        "text": "Steam from the hills"
+      }
+    ],
+    "answer": "a",
+    "reason": "The air near the ground got cool enough to make droplets. A cloud on the ground is fog."
+  },
+  "faq": [
+    {
+      "q": "Why are some clouds grey?",
+      "a": "Thick clouds have so many droplets that sunlight can't get through. That's why rain clouds look grey."
+    },
+    {
+      "q": "Why don't clouds fall?",
+      "a": "Cloud droplets are so tiny that rising air holds them up."
+    },
+    {
+      "q": "What's fog?",
+      "a": "A cloud at ground level."
+    }
+  ],
+  "knowledgePack": "Condensation is water vapour turning into liquid droplets when air cools. Air cools as it rises because air pressure is lower higher up. Cool air can hold less vapour, so extra vapour condenses onto tiny specks of dust or salt. A cloud is billions of tiny droplets (or ice crystals when very cold), not vapour, smoke or steam. Fog is a cloud at ground level. Dew is condensation on cool grass. Grey clouds are thick. Cloud droplets are about 100 times smaller than raindrops.",
+  "labChallenges": [
+    {
+      "id": "c02_l1",
+      "type": "reach_state",
+      "text": "Make a cloud as low as you can.",
+      "check": "cloudSize >= 20 && parcelAboveLine > 0 && parcelAboveLine <= 20"
+    },
+    {
+      "id": "c02_l2",
+      "type": "is_it_possible",
+      "text": "Can you make a cloud vanish without any sun?",
+      "answer": "yes",
+      "reason": "Pull the air back down. It warms up and the droplets turn back into vapour."
+    }
+  ],
+  "mission": {
+    "text": "Breathe slowly onto a cold spoon or a mirror. What appears? Wipe it and try again.",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Tiny drops/fog"
+      },
+      {
+        "id": "b",
+        "text": "Nothing"
+      }
+    ],
+    "debrief": "Your breath has vapour in it. The cold spoon turned it into droplets. That's condensation."
+  }
+}

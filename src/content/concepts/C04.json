@@ -1,0 +1,212 @@
+{
+  "id": "C04",
+  "title": "Which way is the wind?",
+  "subtitle": "Wind direction",
+  "short": "Wind direction",
+  "trail": "air",
+  "needs": [],
+  "icon": "wind",
+  "sim": "SIM_WIND",
+  "seed": 404,
+  "words": [
+    {
+      "word": "wind",
+      "meaning": "Moving air. A wind is named by where it comes from: a west wind blows from the west.",
+      "icon": "wind"
+    },
+    {
+      "word": "compass",
+      "meaning": "North, south, east, west. In Mumbai, the sea is to the west.",
+      "icon": "compass"
+    }
+  ],
+  "hook": {
+    "image": "hook_c04_kites.jpg",
+    "alt": "Kites at Marine Drive",
+    "icon": "wind_vane",
+    "lines": [
+      "Kites at Marine Drive all lean the same way.",
+      "Weather people say 'a west wind'. Does that mean going west, or coming from the west?"
+    ]
+  },
+  "predict": {
+    "question": "A west wind is blowing at Marine Drive. Which way does the flag point?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Towards the west (the sea)",
+        "short": "towards the west"
+      },
+      {
+        "id": "b",
+        "text": "Towards the east (the city)",
+        "short": "towards the east"
+      }
+    ],
+    "answer": "b"
+  },
+  "watch": {
+    "instruction": "Turn the wind arrow so it comes from the sea.",
+    "duration": 18,
+    "script": [
+      {
+        "t": 0,
+        "set": {
+          "windFrom": "W"
+        }
+      },
+      {
+        "t": 3,
+        "caption": "cap1"
+      },
+      {
+        "t": 9,
+        "caption": "cap2"
+      },
+      {
+        "t": 14,
+        "set": {
+          "windFrom": "E"
+        }
+      },
+      {
+        "t": 14,
+        "caption": "cap3"
+      }
+    ],
+    "captions": {
+      "cap1": "Wind from the west. It comes off the sea.",
+      "cap2": "The flag points east, the way the air is moving.",
+      "cap3": "Now wind from the east: from the land."
+    }
+  },
+  "explain": {
+    "question": "Why do we name a wind by where it comes from?",
+    "correct": {
+      "id": "r1",
+      "text": "That tells us what the air passed over, like the wet sea."
+    },
+    "misconceptions": [
+      {
+        "id": "m_goingto",
+        "text": "We name it by where it's going, like a train.",
+        "parentLabel": "Names wind by where it goes"
+      },
+      {
+        "id": "m_random",
+        "text": "The names are random; any direction is fine.",
+        "parentLabel": "Thinks names are arbitrary"
+      },
+      {
+        "id": "m_sun",
+        "text": "Winds are named after where the sun is.",
+        "parentLabel": "Links wind names to the sun"
+      },
+      {
+        "id": "m_compass",
+        "text": "The compass needle points where the wind blows.",
+        "parentLabel": "Confuses compass and wind vane"
+      }
+    ],
+    "examples": {
+      "home": "Monsoon winds come from the south-west, off the Arabian Sea.",
+      "india": "In winter, north-east winds blow across India.",
+      "world": "Sailors named winds for centuries, like the \"trade winds\"."
+    },
+    "highlight": {
+      "start": 2,
+      "end": 9,
+      "layer": "arrow_tail",
+      "caption": "Look at the tail. That's where the air is coming from."
+    }
+  },
+  "nameIt": [
+    {
+      "kind": "wind_game",
+      "prompt": "Make a north-east wind.",
+      "target": "NE",
+      "options": [],
+      "answer": 0
+    },
+    {
+      "kind": "word",
+      "prompt": "Which wind is this?",
+      "promptIcons": [
+        "sea",
+        "wind"
+      ],
+      "options": [
+        "wind from the west",
+        "wind from the east",
+        "wind from the north"
+      ],
+      "answer": 0
+    }
+  ],
+  "twist": {
+    "question": "In Mumbai, smoke from a chimney drifts out over the sea. Where is the wind coming from?",
+    "options": [
+      {
+        "id": "a",
+        "text": "From the land, the east"
+      },
+      {
+        "id": "b",
+        "text": "From the sea, the west"
+      },
+      {
+        "id": "c",
+        "text": "There's no wind"
+      }
+    ],
+    "answer": "a",
+    "reason": "The smoke moves towards the sea, so the air is coming from the land."
+  },
+  "faq": [
+    {
+      "q": "What's a wind vane?",
+      "a": "A pointer on a pole. Its arrow points into the wind, to where it comes from."
+    },
+    {
+      "q": "What makes wind?",
+      "a": "Air moves from cooler places to warmer places, where air is rising. You'll see this at the Sea Breeze Stop."
+    },
+    {
+      "q": "Which wind brings the monsoon?",
+      "a": "The south-west wind, from the Arabian Sea."
+    }
+  ],
+  "knowledgePack": "Wind is moving air. Winds are named by the direction they come from (a west wind comes from the west). This matters because wind carries the properties of where it came from: sea winds are moist, land winds drier. Eight compass points: N, NE, E, SE, S, SW, W, NW. In Mumbai the Arabian Sea is to the west. The summer monsoon wind blows from the south-west; winter winds over India are mostly from the north-east. A wind vane points into the wind. Flags and smoke stream away from where the wind comes from.",
+  "labChallenges": [
+    {
+      "id": "c04_l1",
+      "type": "reach_state",
+      "text": "Make all the kites fly towards the sea.",
+      "check": "windFromLand == 1"
+    },
+    {
+      "id": "c04_l2",
+      "type": "reach_state",
+      "text": "Make a south-west wind, the monsoon wind.",
+      "check": "windFromSW == 1"
+    }
+  ],
+  "mission": {
+    "text": "Look at a flag, a dupatta on a washing line, or tree leaves. Where is the wind coming from? Then check Sky Today in the app.",
+    "answers": [
+      {
+        "id": "a",
+        "text": "From the sea side"
+      },
+      {
+        "id": "b",
+        "text": "From the land side"
+      },
+      {
+        "id": "c",
+        "text": "I couldn't tell"
+      }
+    ],
+    "debrief": "Detectives check the clues. You just read the wind."
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "id": "case3",
+  "number": 3,
+  "title": "The Kite Mystery",
+  "needs": [
+    "C05"
+  ],
+  "concepts": [
+    "C05"
+  ],
+  "map": {
+    "caption": "The coastal town Sunbay. The sea is to the east.",
+    "elements": [
+      {
+        "t": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 200,
+        "fill": "#F3D9A4"
+      },
+      {
+        "t": "rect",
+        "x": 220,
+        "y": 0,
+        "w": 100,
+        "h": 200,
+        "fill": "#1E88C7"
+      },
+      {
+        "t": "tri",
+        "cx": 40,
+        "by": 80,
+        "w": 50,
+        "h": 46,
+        "fill": "#9AA5B1"
+      },
+      {
+        "t": "tri",
+        "cx": 86,
+        "by": 90,
+        "w": 56,
+        "h": 54,
+        "fill": "#9AA5B1"
+      },
+      {
+        "t": "tri",
+        "cx": 130,
+        "by": 80,
+        "w": 44,
+        "h": 40,
+        "fill": "#9AA5B1"
+      },
+      {
+        "t": "rect",
+        "x": 150,
+        "y": 130,
+        "w": 18,
+        "h": 16,
+        "fill": "#FFFFFF",
+        "stroke": "#1F2A37"
+      },
+      {
+        "t": "rect",
+        "x": 176,
+        "y": 134,
+        "w": 18,
+        "h": 14,
+        "fill": "#FFFFFF",
+        "stroke": "#1F2A37"
+      },
+      {
+        "t": "label",
+        "x": 160,
+        "y": 168,
+        "text": "Sunbay",
+        "anchor": "middle"
+      },
+      {
+        "t": "label",
+        "x": 270,
+        "y": 100,
+        "text": "Sea",
+        "anchor": "middle"
+      },
+      {
+        "t": "label",
+        "x": 80,
+        "y": 30,
+        "text": "Hills",
+        "anchor": "middle"
+      },
+      {
+        "t": "arrow",
+        "x1": 296,
+        "y1": 186,
+        "x2": 296,
+        "y2": 150,
+        "color": "#1F2A37"
+      },
+      {
+        "t": "label",
+        "x": 296,
+        "y": 142,
+        "text": "N",
+        "anchor": "middle"
+      }
+    ]
+  },
+  "clues": [
+    {
+      "kind": "note",
+      "text": "At 3 pm, every kite on the beach points towards the hills (west)."
+    },
+    {
+      "kind": "thermos",
+      "title": "Thermometers at 3 pm",
+      "items": [
+        {
+          "label": "Sand",
+          "value": 36
+        },
+        {
+          "label": "Sea",
+          "value": 28
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "At 3 pm, which is warmer?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The sand"
+        },
+        {
+          "id": "b",
+          "text": "The sea"
+        }
+      ],
+      "answer": "a"
+    },
+    {
+      "prompt": "Where is the 3 pm wind coming from?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The east, off the sea"
+        },
+        {
+          "id": "b",
+          "text": "The west, off the hills"
+        },
+        {
+          "id": "c",
+          "text": "The north"
+        }
+      ],
+      "answer": "a"
+    }
+  ],
+  "bigWhy": {
+    "prompt": "Explain why the kites point to the hills in the afternoon.",
+    "keyIdeas": [
+      {
+        "id": "k1",
+        "required": true,
+        "text": "the land/sand gets hotter than the sea in the day"
+      },
+      {
+        "id": "k2",
+        "required": true,
+        "text": "warm air over the land rises"
+      },
+      {
+        "id": "k3",
+        "required": true,
+        "text": "cooler air comes in from the sea (east), so the wind blows from the sea"
+      }
+    ],
+    "watchFor": [
+      "m_waves",
+      "m_sunpull",
+      "m_seahot"
+    ],
+    "watchConcept": "C05",
+    "chips": [
+      {
+        "label": "In the afternoon",
+        "options": [
+          {
+            "id": "a",
+            "text": "the land is hotter than the sea"
+          },
+          {
+            "id": "b",
+            "text": "the sea is hotter"
+          },
+          {
+            "id": "c",
+            "text": "they're the same"
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "label": "So air over the land",
+        "options": [
+          {
+            "id": "a",
+            "text": "rises"
+          },
+          {
+            "id": "b",
+            "text": "sinks"
+          },
+          {
+            "id": "c",
+            "text": "freezes"
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "label": "And the wind comes from",
+        "options": [
+          {
+            "id": "a",
+            "text": "the hills in the west"
+          },
+          {
+            "id": "b",
+            "text": "the sea in the east"
+          },
+          {
+            "id": "c",
+            "text": "the sun"
+          }
+        ],
+        "answer": "b"
+      }
+    ]
+  },
+  "twist": {
+    "prompt": "At 2 am, which way do the kites point?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Towards the hills (west)"
+      },
+      {
+        "id": "b",
+        "text": "Straight up"
+      },
+      {
+        "id": "c",
+        "text": "Towards the sea (east)"
+      }
+    ],
+    "answer": "c",
+    "reason": "At night the land is cooler, so the wind blows from the land out to sea."
+  },
+  "reveal": {
+    "icon": "sea_breeze",
+    "text": "Chennai is like Sunbay: its sea is to the east, so its afternoon sea breeze comes from the east."
+  }
+}

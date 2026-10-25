@@ -1,0 +1,75 @@
+{
+  "id": "D4",
+  "title": "Windward or leeward?",
+  "concept": "C06",
+  "sides": [
+    {
+      "id": "windward",
+      "label": "Windward",
+      "icon": "monsoon"
+    },
+    {
+      "id": "leeward",
+      "label": "Leeward",
+      "icon": "desert"
+    }
+  ],
+  "items": [
+    {
+      "id": "D4_1",
+      "side": "windward",
+      "reason": "Wet air climbs and drops its rain here.",
+      "kind": "text",
+      "text": "Green slopes with monsoon waterfalls."
+    },
+    {
+      "id": "D4_2",
+      "side": "leeward",
+      "reason": "Air arrives dry after crossing.",
+      "kind": "text",
+      "text": "A dry plain behind the mountains."
+    },
+    {
+      "id": "D4_3",
+      "side": "windward",
+      "reason": "It faces the monsoon wind off the sea.",
+      "kind": "text",
+      "text": "Mumbai"
+    },
+    {
+      "id": "D4_4",
+      "side": "leeward",
+      "reason": "It is behind the Western Ghats.",
+      "kind": "text",
+      "text": "Pune"
+    },
+    {
+      "id": "D4_5",
+      "side": "windward",
+      "reason": "Climbing happens on the wind's side.",
+      "kind": "text",
+      "text": "Air climbing and cooling."
+    },
+    {
+      "id": "D4_6",
+      "side": "leeward",
+      "reason": "Air comes down on the far side.",
+      "kind": "text",
+      "text": "Air sinking and warming."
+    },
+    {
+      "id": "D4_7",
+      "side": "leeward",
+      "reason": "The mountains squeeze out the rain first.",
+      "kind": "text",
+      "text": "Ladakh, behind the Himalayas."
+    },
+    {
+      "id": "D4_8",
+      "side": "windward",
+      "reason": "Moist air is forced up its hills.",
+      "kind": "text",
+      "text": "Cherrapunji, facing the wet winds."
+    }
+  ]
+}

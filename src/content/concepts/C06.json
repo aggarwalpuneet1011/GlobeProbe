@@ -1,0 +1,243 @@
+{
+  "id": "C06",
+  "title": "The wet side and the dry side",
+  "subtitle": "Windward and leeward",
+  "short": "Windward/leeward",
+  "trail": "air",
+  "needs": [
+    "C02",
+    "C04"
+  ],
+  "icon": "windward_leeward",
+  "sim": "SIM_MOUNTAIN",
+  "seed": 606,
+  "words": [
+    {
+      "word": "windward",
+      "meaning": "The side of a mountain the wind blows onto.",
+      "icon": "windward_leeward"
+    },
+    {
+      "word": "leeward",
+      "meaning": "The sheltered side, away from the wind.",
+      "icon": "windward_leeward"
+    },
+    {
+      "word": "rain shadow",
+      "meaning": "The dry area on the leeward side.",
+      "icon": "desert"
+    }
+  ],
+  "hook": {
+    "image": "hook_c06_ghats.jpg",
+    "alt": "The Western Ghats in monsoon",
+    "icon": "mountain",
+    "lines": [
+      "Mumbai and Pune are only about 120 km apart.",
+      "But Mumbai gets roughly three times more rain. What's in between?"
+    ]
+  },
+  "predict": {
+    "question": "Wind blows from the sea towards the mountain. Where will it rain most?",
+    "options": [
+      {
+        "id": "a",
+        "icon": "monsoon",
+        "text": "The sea side of the mountain",
+        "short": "the sea side"
+      },
+      {
+        "id": "b",
+        "icon": "mountain",
+        "text": "The very top",
+        "short": "the very top"
+      },
+      {
+        "id": "c",
+        "icon": "desert",
+        "text": "The far side",
+        "short": "the far side"
+      }
+    ],
+    "answer": "a"
+  },
+  "watch": {
+    "instruction": "Watch, then drag the mountain taller.",
+    "duration": 20,
+    "script": [
+      {
+        "t": 0,
+        "set": {
+          "H": 140,
+          "wind": "sea"
+        }
+      },
+      {
+        "t": 3,
+        "caption": "cap1"
+      },
+      {
+        "t": 7,
+        "caption": "cap2"
+      },
+      {
+        "t": 12,
+        "caption": "cap3"
+      },
+      {
+        "t": 15,
+        "set": {
+          "H": 200
+        },
+        "ease": 1.5
+      },
+      {
+        "t": 15,
+        "caption": "cap4"
+      }
+    ],
+    "captions": {
+      "cap1": "Wet sea air hits the mountain and has to climb.",
+      "cap2": "Climbing air cools. Its vapour turns to clouds and rain.",
+      "cap3": "Over the top, the air sinks and warms. Much drier now: only a little rain here.",
+      "cap4": "A taller mountain squeezes out even more rain."
+    },
+    "revealMatch": "You predicted the sea side. You were right.",
+    "revealMiss": "You predicted {choice}. Look where the rain really fell."
+  },
+  "explain": {
+    "question": "Why is Pune so much drier than Mumbai?",
+    "correct": {
+      "id": "r1",
+      "text": "The air drops its rain climbing the sea side, so it comes down dry."
+    },
+    "misconceptions": [
+      {
+        "id": "m_wall",
+        "text": "The mountain stops the rain like a big wall.",
+        "parentLabel": "Thinks mountains block rain like a wall"
+      },
+      {
+        "id": "m_shadow",
+        "text": "The mountain casts a shadow on Pune all day, so it stays dry.",
+        "parentLabel": "Takes \"rain shadow\" literally"
+      },
+      {
+        "id": "m_far",
+        "text": "Pune is too far from the sea for rain to reach it.",
+        "parentLabel": "Thinks distance alone explains it"
+      },
+      {
+        "id": "m_cold",
+        "text": "Rain freezes on the mountain top and can't get across.",
+        "parentLabel": "Thinks rain freezes and stops"
+      }
+    ],
+    "examples": {
+      "home": "The Western Ghats between Mumbai and Pune.",
+      "india": "The Himalayas: very wet on the south side, very dry in Ladakh behind them.",
+      "world": "Sri Lanka's hills: the south-west is wet in the monsoon, the east drier. Also the Andes: rainy Chile on one side, dry Patagonia on the other."
+    },
+    "highlight": {
+      "start": 3,
+      "end": 12,
+      "layer": "parcels_windward",
+      "caption": "Follow one air bubble. Blue and raining going up, orange and dry coming down."
+    }
+  },
+  "nameIt": [
+    {
+      "kind": "word",
+      "prompt": "The green, wet slope faces the wind. It is the...",
+      "promptIcon": "windward_leeward",
+      "options": [
+        "windward",
+        "leeward"
+      ],
+      "answer": 0
+    },
+    {
+      "kind": "word",
+      "prompt": "The dry land behind a mountain is in the...",
+      "options": [
+        "rain shadow",
+        "wind tunnel",
+        "sea breeze"
+      ],
+      "answer": 0
+    }
+  ],
+  "twist": {
+    "question": "A mountain range runs from north to south. The wind blows from the NORTH, along the mountains, not across them. Which side is wetter?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The west side"
+      },
+      {
+        "id": "b",
+        "text": "The east side"
+      },
+      {
+        "id": "c",
+        "text": "About the same on both sides"
+      }
+    ],
+    "answer": "c",
+    "reason": "The air isn't pushed up the slopes, so neither side gets the extra rain."
+  },
+  "faq": [
+    {
+      "q": "Why does rising air cool?",
+      "a": "Higher up, there's less air pressing down, so rising air spreads out, and spreading air cools."
+    },
+    {
+      "q": "Does it ever rain in Pune?",
+      "a": "Yes, in the monsoon, just much less than in Mumbai."
+    },
+    {
+      "q": "What are the Western Ghats?",
+      "a": "A long line of hills and mountains along India's west coast. In Maharashtra they're called the Sahyadri."
+    }
+  ],
+  "knowledgePack": "When moist wind meets a mountain, it is forced up the windward slope. Rising air cools, vapour condenses into clouds, and rain falls, mostly on the windward side and near the top. After crossing the top, the air sinks down the leeward side and warms up as it sinks, so clouds evaporate and little rain falls: a rain shadow. Taller mountains cause more lift and a stronger rain shadow. The Western Ghats (Sahyadri) do this to the south-west monsoon: Mumbai on the windward side gets about 2,000 to 2,500 mm a year; Pune on the leeward side gets about 700 mm. If the wind blows along a range rather than across it, there is little lifting. If the wind comes from dry land, there is little rain anywhere.",
+  "labChallenges": [
+    {
+      "id": "c06_l1",
+      "type": "reach_state",
+      "text": "Make Pune wetter than Mumbai.",
+      "check": "puneGauge > mumbaiGauge"
+    },
+    {
+      "id": "c06_l2",
+      "type": "is_it_possible",
+      "text": "With the wind from the land, can you make lots of rain anywhere?",
+      "answer": "no",
+      "reason": "Wind from the land is dry. No water, no rain, whatever the mountain does."
+    },
+    {
+      "id": "c06_l3",
+      "type": "reach_state",
+      "text": "Make both cities get the same rain.",
+      "check": "H < 40 && mumbaiGauge > 0 && gaugeDiffRatio <= 0.2"
+    }
+  ],
+  "mission": {
+    "text": "On a drive to Lonavala or Pune in the monsoon, look out of the window. Where are the clouds thickest: on the Mumbai side, or after the ghats? Take a grown-up with you.",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Mumbai side"
+      },
+      {
+        "id": "b",
+        "text": "After the ghats"
+      },
+      {
+        "id": "c",
+        "text": "Same everywhere"
+      }
+    ],
+    "debrief": "You've seen a rain shadow with your own eyes."
+  }
+}

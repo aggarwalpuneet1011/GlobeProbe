@@ -1,0 +1,301 @@
+{
+  "id": "case1",
+  "number": 1,
+  "title": "The Island of Two Faces",
+  "needs": [
+    "C06"
+  ],
+  "concepts": [
+    "C06"
+  ],
+  "map": {
+    "caption": "A long island with a mountain range down the middle.",
+    "elements": [
+      {
+        "t": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 200,
+        "fill": "#1E88C7"
+      },
+      {
+        "t": "poly",
+        "pts": [
+          150,
+          12,
+          192,
+          24,
+          216,
+          62,
+          224,
+          112,
+          210,
+          160,
+          178,
+          188,
+          138,
+          186,
+          110,
+          150,
+          102,
+          100,
+          114,
+          50
+        ],
+        "fill": "#F3D9A4",
+        "stroke": "#1F2A37"
+      },
+      {
+        "t": "tri",
+        "cx": 160,
+        "by": 60,
+        "w": 34,
+        "h": 30,
+        "fill": "#9AA5B1"
+      },
+      {
+        "t": "tri",
+        "cx": 160,
+        "by": 92,
+        "w": 38,
+        "h": 34,
+        "fill": "#9AA5B1"
+      },
+      {
+        "t": "tri",
+        "cx": 160,
+        "by": 128,
+        "w": 40,
+        "h": 38,
+        "fill": "#9AA5B1"
+      },
+      {
+        "t": "tri",
+        "cx": 160,
+        "by": 164,
+        "w": 36,
+        "h": 32,
+        "fill": "#9AA5B1"
+      },
+      {
+        "t": "circle",
+        "cx": 108,
+        "cy": 108,
+        "r": 5,
+        "fill": "#FF6B4A",
+        "stroke": "#1F2A37"
+      },
+      {
+        "t": "label",
+        "x": 98,
+        "y": 100,
+        "text": "Westbay",
+        "anchor": "end"
+      },
+      {
+        "t": "circle",
+        "cx": 216,
+        "cy": 108,
+        "r": 5,
+        "fill": "#FF6B4A",
+        "stroke": "#1F2A37"
+      },
+      {
+        "t": "label",
+        "x": 226,
+        "y": 100,
+        "text": "the Town",
+        "anchor": "start"
+      },
+      {
+        "t": "arrow",
+        "x1": 8,
+        "y1": 150,
+        "x2": 78,
+        "y2": 150,
+        "color": "#4FA3E0"
+      },
+      {
+        "t": "label",
+        "x": 8,
+        "y": 134,
+        "text": "Wind from the west,",
+        "anchor": "start"
+      },
+      {
+        "t": "label",
+        "x": 8,
+        "y": 172,
+        "text": "all year",
+        "anchor": "start"
+      }
+    ]
+  },
+  "clues": [
+    {
+      "kind": "photo",
+      "icon": "mangrove",
+      "text": "Westbay: thick green forest."
+    },
+    {
+      "kind": "photo",
+      "icon": "plateau",
+      "text": "The Town: dry, yellow grass."
+    },
+    {
+      "kind": "bars",
+      "title": "Rain in a year",
+      "unit": "mm",
+      "bars": [
+        {
+          "label": "Westbay",
+          "value": 3000
+        },
+        {
+          "label": "The Town",
+          "value": 600
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "Which side of the island is wetter?",
+      "options": [
+        {
+          "id": "a",
+          "text": "West"
+        },
+        {
+          "id": "b",
+          "text": "East"
+        },
+        {
+          "id": "c",
+          "text": "Both the same"
+        }
+      ],
+      "answer": "a"
+    },
+    {
+      "prompt": "Is the Town wet or dry?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wet"
+        },
+        {
+          "id": "b",
+          "text": "Dry"
+        }
+      ],
+      "answer": "b"
+    }
+  ],
+  "bigWhy": {
+    "prompt": "Explain why the Town is dry, like a detective.",
+    "keyIdeas": [
+      {
+        "id": "k1",
+        "required": true,
+        "text": "wet air from the sea is pushed up the mountain"
+      },
+      {
+        "id": "k2",
+        "required": true,
+        "text": "the rising air cools and rain falls on the west (windward) side"
+      },
+      {
+        "id": "k3",
+        "required": true,
+        "text": "the air coming down the east side is dry (and warms)"
+      }
+    ],
+    "watchFor": [
+      "m_wall",
+      "m_shadow",
+      "m_far"
+    ],
+    "watchConcept": "C06",
+    "chips": [
+      {
+        "label": "The wind comes from",
+        "options": [
+          {
+            "id": "a",
+            "text": "the sea in the west"
+          },
+          {
+            "id": "b",
+            "text": "the Town"
+          },
+          {
+            "id": "c",
+            "text": "the sun"
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "label": "The air",
+        "options": [
+          {
+            "id": "a",
+            "text": "stops at the mountain"
+          },
+          {
+            "id": "b",
+            "text": "climbs the mountain and cools"
+          },
+          {
+            "id": "c",
+            "text": "goes under the mountain"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "label": "So the Town",
+        "options": [
+          {
+            "id": "a",
+            "text": "gets all the rain"
+          },
+          {
+            "id": "b",
+            "text": "sits in a shadow"
+          },
+          {
+            "id": "c",
+            "text": "gets dry air"
+          }
+        ],
+        "answer": "c"
+      }
+    ]
+  },
+  "twist": {
+    "prompt": "One year, the wind blows from the EAST instead, off the eastern sea. What happens to the Town?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It gets wet"
+      },
+      {
+        "id": "b",
+        "text": "It stays dry"
+      },
+      {
+        "id": "c",
+        "text": "No rain anywhere"
+      }
+    ],
+    "answer": "a",
+    "reason": "Now the Town faces the wet wind. It's on the windward side."
+  },
+  "reveal": {
+    "icon": "windward_leeward",
+    "text": "Places like this are real: Sri Lanka's south-west is soaked by the monsoon, and Mumbai and Pune sit on either side of the Western Ghats."
+  }
+}

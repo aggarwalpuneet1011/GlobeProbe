@@ -1,0 +1,75 @@
+{
+  "id": "D3",
+  "title": "Sea breeze or land breeze?",
+  "concept": "C05",
+  "sides": [
+    {
+      "id": "sea",
+      "label": "Sea breeze",
+      "icon": "sea_breeze"
+    },
+    {
+      "id": "land",
+      "label": "Land breeze",
+      "icon": "land_breeze"
+    }
+  ],
+  "items": [
+    {
+      "id": "D3_1",
+      "side": "sea",
+      "reason": "Daytime: the land is hotter.",
+      "kind": "text",
+      "text": "3 pm at Juhu, wind from the sea."
+    },
+    {
+      "id": "D3_2",
+      "side": "land",
+      "reason": "Night: the land is cooler.",
+      "kind": "text",
+      "text": "2 am, wind blowing out to sea."
+    },
+    {
+      "id": "D3_3",
+      "side": "sea",
+      "reason": "Air rises over hot land; sea air flows in.",
+      "kind": "text",
+      "text": "The sand is hotter than the water."
+    },
+    {
+      "id": "D3_4",
+      "side": "land",
+      "reason": "Air flows from the cool land to the sea.",
+      "kind": "text",
+      "text": "The land is cooler than the water."
+    },
+    {
+      "id": "D3_5",
+      "side": "sea",
+      "reason": "Wind from the sea pushes them inland.",
+      "kind": "text",
+      "text": "Kites at Marine Drive pull towards the city in the afternoon."
+    },
+    {
+      "id": "D3_6",
+      "side": "land",
+      "reason": "Before sunrise, the land is coolest.",
+      "kind": "text",
+      "text": "Fishing boats catch a wind out to sea before dawn."
+    },
+    {
+      "id": "D3_7",
+      "side": "sea",
+      "reason": "Chennai's sea is to the east.",
+      "kind": "text",
+      "text": "Chennai's afternoon wind comes from the east."
+    },
+    {
+      "id": "D3_8",
+      "side": "land",
+      "reason": "The air is moving towards the sea.",
+      "kind": "text",
+      "text": "At night, smoke drifts from the beach out over the water."
+    }
+  ]
+}

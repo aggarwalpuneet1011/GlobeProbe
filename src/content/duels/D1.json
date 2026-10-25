@@ -1,0 +1,80 @@
+{
+  "id": "D1",
+  "title": "Drizzle, rain or downpour?",
+  "concept": "C03",
+  "sides": [
+    {
+      "id": "drizzle",
+      "label": "Drizzle",
+      "icon": "drizzle"
+    },
+    {
+      "id": "rain",
+      "label": "Rain",
+      "icon": "rain"
+    },
+    {
+      "id": "downpour",
+      "label": "Downpour",
+      "icon": "downpour"
+    }
+  ],
+  "items": [
+    {
+      "id": "D1_1",
+      "side": "drizzle",
+      "reason": "Tiny, slow drops barely wet you.",
+      "kind": "text",
+      "text": "Only your hair gets a little damp."
+    },
+    {
+      "id": "D1_2",
+      "side": "drizzle",
+      "reason": "Almost silent: drops too small to splash.",
+      "kind": "sound",
+      "sound": "rain_drizzle"
+    },
+    {
+      "id": "D1_3",
+      "side": "drizzle",
+      "reason": "Drizzle drops are smaller than a sugar grain.",
+      "kind": "text",
+      "text": "The drops look like mist and puddles hardly ripple."
+    },
+    {
+      "id": "D1_4",
+      "side": "rain",
+      "reason": "Medium drops, steady fall.",
+      "kind": "text",
+      "text": "You need an umbrella and puddles slowly fill."
+    },
+    {
+      "id": "D1_5",
+      "side": "rain",
+      "reason": "A steady patter of medium drops.",
+      "kind": "sound",
+      "sound": "rain_steady"
+    },
+    {
+      "id": "D1_6",
+      "side": "rain",
+      "reason": "Bigger drops make bigger ripples.",
+      "kind": "text",
+      "text": "Drops make clear rings in puddles."
+    },
+    {
+      "id": "D1_7",
+      "side": "downpour",
+      "reason": "Big, fast drops, lots of them.",
+      "kind": "text",
+      "text": "Roads flood in minutes and drops bounce off the ground."
+    },
+    {
+      "id": "D1_8",
+      "side": "downpour",
+      "reason": "A roar of heavy drops.",
+      "kind": "sound",
+      "sound": "rain_heavy"
+    }
+  ]
+}

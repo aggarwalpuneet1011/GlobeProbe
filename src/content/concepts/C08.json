@@ -1,0 +1,228 @@
+{
+  "id": "C08",
+  "title": "Island or peninsula?",
+  "subtitle": null,
+  "short": "Island/peninsula",
+  "trail": "coast",
+  "needs": [],
+  "icon": "peninsula",
+  "sim": "3D_LANDFORM",
+  "seed": 808,
+  "words": [
+    {
+      "word": "island",
+      "meaning": "Land with water all around it.",
+      "icon": "island"
+    },
+    {
+      "word": "peninsula",
+      "meaning": "Land with water on three sides, joined to bigger land on one side.",
+      "icon": "peninsula"
+    }
+  ],
+  "hook": {
+    "image": "hook_c08_islands.jpg",
+    "alt": "An old map of Mumbai's seven islands",
+    "icon": "map",
+    "lines": [
+      "Long ago, Mumbai was seven separate islands.",
+      "Today it's one piece of land. Is it still an island?"
+    ]
+  },
+  "predict": {
+    "question": "If the sea rises a lot, what will this peninsula become?",
+    "options": [
+      {
+        "id": "a",
+        "icon": "island",
+        "text": "An island",
+        "short": "an island"
+      },
+      {
+        "id": "b",
+        "icon": "peninsula",
+        "text": "A bigger peninsula",
+        "short": "a bigger peninsula"
+      },
+      {
+        "id": "c",
+        "text": "Nothing will change",
+        "short": "that nothing will change"
+      }
+    ],
+    "answer": "a"
+  },
+  "watch": {
+    "instruction": "Slide the sea level up.",
+    "duration": 16,
+    "script": [
+      {
+        "t": 0,
+        "set": {
+          "seaLevel": 0,
+          "camera": "angle"
+        }
+      },
+      {
+        "t": 3,
+        "caption": "cap1"
+      },
+      {
+        "t": 6,
+        "set": {
+          "seaLevel": 0.18
+        },
+        "ease": 2.5
+      },
+      {
+        "t": 9,
+        "caption": "cap2"
+      },
+      {
+        "t": 12,
+        "set": {
+          "seaLevel": -0.22
+        },
+        "ease": 2.5
+      },
+      {
+        "t": 13,
+        "caption": "cap3"
+      }
+    ],
+    "captions": {
+      "cap1": "See the thin strip joining it to the mainland? That's the neck.",
+      "cap2": "The neck is underwater. Water on all sides now: an island!",
+      "cap3": "Lower the sea and the little island joins the mainland."
+    }
+  },
+  "explain": {
+    "question": "What makes an island an island?",
+    "correct": {
+      "id": "r1",
+      "text": "It has water all the way around it, on every side."
+    },
+    "misconceptions": [
+      {
+        "id": "m_small",
+        "text": "It is small. Big pieces of land can't be islands.",
+        "parentLabel": "Thinks islands must be small"
+      },
+      {
+        "id": "m_beach",
+        "text": "It has beaches and palm trees all around it.",
+        "parentLabel": "Defines islands by looks"
+      },
+      {
+        "id": "m_float",
+        "text": "It floats on top of the sea like a big boat.",
+        "parentLabel": "Thinks islands float"
+      },
+      {
+        "id": "m_far",
+        "text": "It is far away from every country in the world.",
+        "parentLabel": "Thinks islands must be remote"
+      }
+    ],
+    "examples": {
+      "home": "Mumbai was seven islands; people filled in the sea between them.",
+      "india": "India itself is a peninsula, with sea on three sides; Kanyakumari is its tip.",
+      "world": "Sri Lanka is an island; Italy is a peninsula; Greenland is the world's biggest island."
+    },
+    "highlight": {
+      "start": 3,
+      "end": 9,
+      "layer": "neck",
+      "caption": "Watch the neck. That one strip decides island or peninsula."
+    }
+  },
+  "nameIt": [
+    {
+      "kind": "word",
+      "prompt": "Water on three sides, joined to land on the fourth. What is it?",
+      "promptIcon": "peninsula",
+      "options": [
+        "peninsula",
+        "island",
+        "lake"
+      ],
+      "answer": 0
+    },
+    {
+      "kind": "word",
+      "prompt": "Sri Lanka sits in the sea with water all around. What is it?",
+      "promptIcon": "island",
+      "options": [
+        "island",
+        "peninsula"
+      ],
+      "answer": 0
+    }
+  ],
+  "twist": {
+    "question": "Greenland is huge, bigger than many countries. Is it an island?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Yes, it has water all around"
+      },
+      {
+        "id": "b",
+        "text": "No, it's too big"
+      },
+      {
+        "id": "c",
+        "text": "Only in summer"
+      }
+    ],
+    "answer": "a",
+    "reason": "Size doesn't matter. Water on every side makes it an island."
+  },
+  "faq": [
+    {
+      "q": "Is Mumbai an island today?",
+      "a": "Mumbai's land is joined up, and creeks still separate it from the mainland in places. Geographers still call it Salsette Island."
+    },
+    {
+      "q": "Is Australia an island?",
+      "a": "It has water all around, but it's so big it's counted as a continent."
+    },
+    {
+      "q": "Why does sea level change?",
+      "a": "Over thousands of years, ice melting or freezing makes the oceans rise or fall."
+    }
+  ],
+  "knowledgePack": "An island is land completely surrounded by water. A peninsula is land surrounded by water on three sides and connected to a larger landmass. Size does not decide it: Greenland is the largest island; Australia is usually counted as a continent. India is a large peninsula; Kanyakumari is its southern tip. Italy is a peninsula. Sri Lanka is an island. Mumbai was originally seven islands joined by land reclamation from the 1700s onwards. When sea levels were lower in the Ice Age, Britain was joined to mainland Europe by land; rising seas made it an island.",
+  "labChallenges": [
+    {
+      "id": "c08_l1",
+      "type": "reach_state",
+      "text": "Turn the peninsula into an island.",
+      "check": "seaLevel >= 0.15"
+    },
+    {
+      "id": "c08_l2",
+      "type": "reach_state",
+      "text": "Join the little island to the mainland.",
+      "check": "seaLevel <= -0.2"
+    }
+  ],
+  "mission": {
+    "text": "Spin the Globe and find India. Count the sides with sea. Then find one real island and one real peninsula.",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Found both"
+      },
+      {
+        "id": "b",
+        "text": "Found one"
+      },
+      {
+        "id": "c",
+        "text": "Need help"
+      }
+    ],
+    "debrief": "Map detectives use shape clues. You just did."
+  }
+}

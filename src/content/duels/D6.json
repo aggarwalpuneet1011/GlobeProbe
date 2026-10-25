@@ -1,0 +1,75 @@
+{
+  "id": "D6",
+  "title": "Island or peninsula?",
+  "concept": "C08",
+  "sides": [
+    {
+      "id": "island",
+      "label": "Island",
+      "icon": "island"
+    },
+    {
+      "id": "peninsula",
+      "label": "Peninsula",
+      "icon": "peninsula"
+    }
+  ],
+  "items": [
+    {
+      "id": "D6_1",
+      "side": "peninsula",
+      "reason": "Sea on three sides.",
+      "kind": "text",
+      "text": "India"
+    },
+    {
+      "id": "D6_2",
+      "side": "island",
+      "reason": "Sea all around.",
+      "kind": "text",
+      "text": "Sri Lanka"
+    },
+    {
+      "id": "D6_3",
+      "side": "peninsula",
+      "reason": "Joined to Europe on one side.",
+      "kind": "text",
+      "text": "Italy"
+    },
+    {
+      "id": "D6_4",
+      "side": "island",
+      "reason": "Huge, but water all around.",
+      "kind": "text",
+      "text": "Greenland"
+    },
+    {
+      "id": "D6_5",
+      "side": "island",
+      "reason": "Each has sea on every side.",
+      "kind": "text",
+      "text": "Japan's main islands"
+    },
+    {
+      "id": "D6_6",
+      "side": "peninsula",
+      "reason": "That's the definition.",
+      "kind": "text",
+      "text": "Land with water on three sides"
+    },
+    {
+      "id": "D6_7",
+      "side": "island",
+      "reason": "That's the definition.",
+      "kind": "text",
+      "text": "Land with water on every side"
+    },
+    {
+      "id": "D6_8",
+      "side": "peninsula",
+      "reason": "The tip of the Indian peninsula.",
+      "kind": "text",
+      "text": "Kanyakumari is at the tip of one."
+    }
+  ]
+}

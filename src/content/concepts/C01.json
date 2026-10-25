@@ -1,0 +1,213 @@
+{
+  "id": "C01",
+  "title": "Where did the puddle go?",
+  "subtitle": "Evaporation",
+  "short": "Evaporation",
+  "trail": "water",
+  "needs": [],
+  "icon": "evaporation",
+  "sim": "SIM_EVAP",
+  "seed": 101,
+  "words": [
+    {
+      "word": "evaporation",
+      "meaning": "Water turning into invisible water vapour that rises into the air.",
+      "icon": "evaporation"
+    }
+  ],
+  "hook": {
+    "image": "hook_c01_lane.jpg",
+    "alt": "A rainy Mumbai lane",
+    "icon": "rain",
+    "lines": [
+      "After the rain, Mumbai's lanes are full of puddles.",
+      "By evening, many are gone. Where did all that water go?"
+    ]
+  },
+  "predict": {
+    "question": "One puddle is in the sun. One is in the shade. Which disappears first?",
+    "options": [
+      {
+        "id": "a",
+        "icon": "sunny",
+        "text": "The sunny one",
+        "short": "the sunny one"
+      },
+      {
+        "id": "b",
+        "icon": "cloudy",
+        "text": "The shady one",
+        "short": "the shady one"
+      },
+      {
+        "id": "c",
+        "text": "Both at the same time",
+        "short": "both at the same time"
+      }
+    ],
+    "answer": "a"
+  },
+  "watch": {
+    "instruction": "Press Play and watch both puddles.",
+    "duration": 18,
+    "script": [
+      {
+        "t": 0,
+        "set": {
+          "sun": 2,
+          "wind": "still",
+          "shade": true
+        }
+      },
+      {
+        "t": 3,
+        "caption": "cap1"
+      },
+      {
+        "t": 10,
+        "caption": "cap2"
+      }
+    ],
+    "captions": {
+      "cap1": "See the wisps? That's vapour. In real life it's invisible.",
+      "cap2": "The sunny puddle is shrinking faster."
+    },
+    "revealMatch": "You predicted the sunny one. You were right.",
+    "revealMiss": "Look: the sunny puddle vanished first."
+  },
+  "explain": {
+    "question": "Why did the sunny puddle disappear first?",
+    "correct": {
+      "id": "r1",
+      "text": "The sun's heat turns the water into vapour faster."
+    },
+    "misconceptions": [
+      {
+        "id": "m_drinks",
+        "text": "The sun soaks up the water like a straw.",
+        "parentLabel": "Thinks the sun drinks water"
+      },
+      {
+        "id": "m_sinks",
+        "text": "Hot water gets heavy and sinks into the road.",
+        "parentLabel": "Thinks water sinks away"
+      },
+      {
+        "id": "m_gone",
+        "text": "The water is used up and gone forever.",
+        "parentLabel": "Thinks water stops existing"
+      },
+      {
+        "id": "m_clouds",
+        "text": "A cloud comes down and sucks the puddle up.",
+        "parentLabel": "Thinks clouds collect puddles"
+      }
+    ],
+    "examples": {
+      "home": "Wet clothes drying on the balcony.",
+      "india": "Salt pans near Mumbai and in Gujarat, where sea water evaporates and leaves salt.",
+      "world": "The Dead Sea, so salty from evaporation that people float."
+    },
+    "highlight": {
+      "start": 4,
+      "end": 10,
+      "layer": "vapour_A",
+      "caption": "Watch the sunny puddle. Heat turns its water into vapour."
+    }
+  },
+  "nameIt": [
+    {
+      "kind": "word",
+      "prompt": "What do we call this?",
+      "promptIcon": "evaporation",
+      "options": [
+        "evaporation",
+        "condensation",
+        "erosion"
+      ],
+      "answer": 0
+    },
+    {
+      "kind": "picture",
+      "prompt": "Water turning into vapour is called...",
+      "options": [
+        "evaporation",
+        "rain",
+        "river"
+      ],
+      "optionIcons": [
+        "evaporation",
+        "rain",
+        "river"
+      ],
+      "answer": 0
+    }
+  ],
+  "twist": {
+    "question": "Two glasses of water sit on a sunny window for a week. One has a lid. Which has less water at the end?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The one with a lid"
+      },
+      {
+        "id": "b",
+        "text": "The one without a lid"
+      },
+      {
+        "id": "c",
+        "text": "Both the same"
+      }
+    ],
+    "answer": "b",
+    "reason": "Without a lid, the vapour can float away. With a lid, it's trapped and drips back."
+  },
+  "faq": [
+    {
+      "q": "Can I see water vapour?",
+      "a": "No, it's invisible. The white steam from a kettle is actually tiny droplets that have already cooled."
+    },
+    {
+      "q": "Does evaporation happen at night?",
+      "a": "Yes, just more slowly, because it's cooler."
+    },
+    {
+      "q": "Where does the vapour go?",
+      "a": "Up into the air. Later it can become clouds. That's our next Stop!"
+    }
+  ],
+  "knowledgePack": "Evaporation is liquid water changing into water vapour, an invisible gas. Heat speeds it up; wind speeds it up by carrying away moist air; a bigger surface evaporates faster. It happens at any temperature, faster when warm. The Sun drives most evaporation on Earth, mostly from oceans. When sea water evaporates, salt is left behind (salt pans). Visible \"steam\" is condensed droplets, not vapour. Evaporation is the first step of the water cycle.",
+  "labChallenges": [
+    {
+      "id": "c01_l1",
+      "type": "reach_state",
+      "text": "Dry the sunny puddle in under 10 seconds.",
+      "check": "puddleAGoneAt > 0 && puddleAGoneAt <= 10"
+    },
+    {
+      "id": "c01_l2",
+      "type": "is_it_possible",
+      "text": "Can you dry a puddle with no sun at all?",
+      "answer": "yes",
+      "reason": "Wind alone can do it. Slowly, but it works."
+    }
+  ],
+  "mission": {
+    "text": "Find a wet patch (after mopping, or a puddle). Draw around it with chalk or remember its shape. Check again after an hour. Take a grown-up with you if it's outside.",
+    "answers": [
+      {
+        "id": "a",
+        "text": "It shrank"
+      },
+      {
+        "id": "b",
+        "text": "It disappeared"
+      },
+      {
+        "id": "c",
+        "text": "No change"
+      }
+    ],
+    "debrief": "That water became vapour and joined the air. You just watched evaporation."
+  }
+}

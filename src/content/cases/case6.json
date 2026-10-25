@@ -1,0 +1,306 @@
+{
+  "id": "case6",
+  "number": 6,
+  "title": "The Land Bridge",
+  "needs": [
+    "C08"
+  ],
+  "concepts": [
+    "C08"
+  ],
+  "map": {
+    "caption": "Two maps of the same coast: today, and 20,000 years ago.",
+    "elements": [
+      {
+        "t": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 200,
+        "fill": "#FFF8EC"
+      },
+      {
+        "t": "rect",
+        "x": 6,
+        "y": 22,
+        "w": 148,
+        "h": 160,
+        "fill": "#1E88C7",
+        "stroke": "#1F2A37",
+        "r": 12
+      },
+      {
+        "t": "poly",
+        "pts": [
+          6,
+          22,
+          56,
+          22,
+          60,
+          80,
+          50,
+          130,
+          56,
+          182,
+          6,
+          182
+        ],
+        "fill": "#3FAE5A",
+        "stroke": "#1F2A37"
+      },
+      {
+        "t": "ellipse",
+        "cx": 112,
+        "cy": 104,
+        "rx": 20,
+        "ry": 14,
+        "fill": "#3FAE5A",
+        "stroke": "#1F2A37"
+      },
+      {
+        "t": "label",
+        "x": 112,
+        "y": 142,
+        "text": "Gull Island",
+        "anchor": "middle",
+        "size": 13
+      },
+      {
+        "t": "label",
+        "x": 80,
+        "y": 14,
+        "text": "Today",
+        "anchor": "middle"
+      },
+      {
+        "t": "rect",
+        "x": 166,
+        "y": 22,
+        "w": 148,
+        "h": 160,
+        "fill": "#1E88C7",
+        "stroke": "#1F2A37",
+        "r": 12
+      },
+      {
+        "t": "poly",
+        "pts": [
+          166,
+          22,
+          216,
+          22,
+          220,
+          80,
+          210,
+          130,
+          216,
+          182,
+          166,
+          182
+        ],
+        "fill": "#3FAE5A",
+        "stroke": "#1F2A37"
+      },
+      {
+        "t": "poly",
+        "pts": [
+          214,
+          96,
+          250,
+          96,
+          274,
+          98,
+          274,
+          114,
+          250,
+          114,
+          214,
+          112
+        ],
+        "fill": "#3FAE5A",
+        "stroke": "#1F2A37"
+      },
+      {
+        "t": "ellipse",
+        "cx": 272,
+        "cy": 104,
+        "rx": 20,
+        "ry": 14,
+        "fill": "#3FAE5A",
+        "stroke": "#1F2A37"
+      },
+      {
+        "t": "poly",
+        "pts": [
+          166,
+          22,
+          314,
+          22,
+          314,
+          42,
+          280,
+          52,
+          240,
+          44,
+          200,
+          54,
+          166,
+          40
+        ],
+        "fill": "#FFFFFF",
+        "stroke": "#1F2A37"
+      },
+      {
+        "t": "label",
+        "x": 240,
+        "y": 14,
+        "text": "20,000 years ago",
+        "anchor": "middle"
+      }
+    ]
+  },
+  "clues": [
+    {
+      "kind": "note",
+      "text": "Long ago, lots of Earth's water was frozen in giant ice sheets."
+    },
+    {
+      "kind": "note",
+      "text": "Fishermen sometimes find old animal bones on the seabed between the island and the coast."
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "Today, Gull Island is...",
+      "options": [
+        {
+          "id": "a",
+          "text": "An island"
+        },
+        {
+          "id": "b",
+          "text": "A peninsula"
+        }
+      ],
+      "answer": "a"
+    },
+    {
+      "prompt": "20,000 years ago, it was part of...",
+      "options": [
+        {
+          "id": "a",
+          "text": "A peninsula / the mainland"
+        },
+        {
+          "id": "b",
+          "text": "Another island"
+        }
+      ],
+      "answer": "a"
+    }
+  ],
+  "bigWhy": {
+    "prompt": "Explain how a peninsula turned into an island.",
+    "keyIdeas": [
+      {
+        "id": "k1",
+        "required": true,
+        "text": "the sea level was lower long ago, then rose"
+      },
+      {
+        "id": "k2",
+        "required": true,
+        "text": "the land joining it went underwater"
+      },
+      {
+        "id": "k3",
+        "required": true,
+        "text": "now there is water on every side, so it is an island"
+      }
+    ],
+    "watchFor": [
+      "m_small",
+      "m_float"
+    ],
+    "watchConcept": "C08",
+    "chips": [
+      {
+        "label": "Long ago the sea was",
+        "options": [
+          {
+            "id": "a",
+            "text": "lower"
+          },
+          {
+            "id": "b",
+            "text": "higher"
+          },
+          {
+            "id": "c",
+            "text": "boiling"
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "label": "So the land between was",
+        "options": [
+          {
+            "id": "a",
+            "text": "dry and joined"
+          },
+          {
+            "id": "b",
+            "text": "underwater"
+          },
+          {
+            "id": "c",
+            "text": "floating"
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "label": "Now the water is",
+        "options": [
+          {
+            "id": "a",
+            "text": "on every side, an island"
+          },
+          {
+            "id": "b",
+            "text": "on three sides"
+          },
+          {
+            "id": "c",
+            "text": "gone"
+          }
+        ],
+        "answer": "a"
+      }
+    ]
+  },
+  "twist": {
+    "prompt": "If the sea dropped again, would Gull Island's dry land get bigger or smaller?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Bigger"
+      },
+      {
+        "id": "b",
+        "text": "Smaller"
+      },
+      {
+        "id": "c",
+        "text": "Same"
+      }
+    ],
+    "answer": "a",
+    "reason": "Lower sea uncovers more land around the edges."
+  },
+  "reveal": {
+    "icon": "island",
+    "text": "Britain was once joined to Europe by land, when the sea was lower. Rising seas made it an island."
+  }
+}

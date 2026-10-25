@@ -1,0 +1,250 @@
+{
+  "id": "case5",
+  "number": 5,
+  "title": "The Drizzle Detective",
+  "needs": [
+    "C03"
+  ],
+  "concepts": [
+    "C03"
+  ],
+  "map": {
+    "caption": "A city with three neighbourhoods.",
+    "elements": [
+      {
+        "t": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 200,
+        "fill": "#FFF8EC"
+      },
+      {
+        "t": "rect",
+        "x": 0,
+        "y": 92,
+        "w": 320,
+        "h": 16,
+        "fill": "#9AA5B1"
+      },
+      {
+        "t": "rect",
+        "x": 150,
+        "y": 0,
+        "w": 16,
+        "h": 200,
+        "fill": "#9AA5B1"
+      },
+      {
+        "t": "rect",
+        "x": 14,
+        "y": 14,
+        "w": 120,
+        "h": 66,
+        "fill": "#EAF5FD",
+        "stroke": "#1F2A37",
+        "r": 14
+      },
+      {
+        "t": "label",
+        "x": 74,
+        "y": 56,
+        "text": "A",
+        "anchor": "middle",
+        "size": 24
+      },
+      {
+        "t": "rect",
+        "x": 186,
+        "y": 14,
+        "w": 120,
+        "h": 66,
+        "fill": "#EAF5FD",
+        "stroke": "#1F2A37",
+        "r": 14
+      },
+      {
+        "t": "label",
+        "x": 246,
+        "y": 56,
+        "text": "B",
+        "anchor": "middle",
+        "size": 24
+      },
+      {
+        "t": "rect",
+        "x": 100,
+        "y": 122,
+        "w": 120,
+        "h": 66,
+        "fill": "#EAF5FD",
+        "stroke": "#1F2A37",
+        "r": 14
+      },
+      {
+        "t": "label",
+        "x": 160,
+        "y": 164,
+        "text": "C",
+        "anchor": "middle",
+        "size": 24
+      }
+    ]
+  },
+  "clues": [
+    {
+      "kind": "witness",
+      "who": "A",
+      "text": "My hair got a little damp. The puddle barely moved."
+    },
+    {
+      "kind": "witness",
+      "who": "B",
+      "text": "I needed my umbrella. Drops made rings in puddles."
+    },
+    {
+      "kind": "witness",
+      "who": "C",
+      "text": "The road flooded in minutes. Drops bounced off the ground."
+    }
+  ],
+  "questions": [
+    {
+      "prompt": "What did A have?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Drizzle"
+        },
+        {
+          "id": "b",
+          "text": "Rain"
+        },
+        {
+          "id": "c",
+          "text": "Downpour"
+        }
+      ],
+      "answer": "a"
+    },
+    {
+      "prompt": "What did C have?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Drizzle"
+        },
+        {
+          "id": "b",
+          "text": "Rain"
+        },
+        {
+          "id": "c",
+          "text": "Downpour"
+        }
+      ],
+      "answer": "c"
+    }
+  ],
+  "bigWhy": {
+    "prompt": "Which neighbourhood had the tallest cloud above it? Explain how you know.",
+    "keyIdeas": [
+      {
+        "id": "k1",
+        "required": true,
+        "text": "C, the downpour neighbourhood"
+      },
+      {
+        "id": "k2",
+        "required": true,
+        "text": "in a tall cloud droplets have more room/time to bump and join"
+      },
+      {
+        "id": "k3",
+        "required": false,
+        "text": "so drops grow bigger and fall faster"
+      }
+    ],
+    "watchFor": [
+      "m_burst",
+      "m_squeeze",
+      "m_fast"
+    ],
+    "watchConcept": "C03",
+    "chips": [
+      {
+        "label": "The tallest cloud was over",
+        "options": [
+          {
+            "id": "a",
+            "text": "C, the downpour"
+          },
+          {
+            "id": "b",
+            "text": "A"
+          },
+          {
+            "id": "c",
+            "text": "B"
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "label": "In a tall cloud, droplets",
+        "options": [
+          {
+            "id": "a",
+            "text": "freeze solid"
+          },
+          {
+            "id": "b",
+            "text": "bump and join for longer"
+          },
+          {
+            "id": "c",
+            "text": "float away"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "label": "So the drops are",
+        "options": [
+          {
+            "id": "a",
+            "text": "smaller"
+          },
+          {
+            "id": "b",
+            "text": "the same"
+          },
+          {
+            "id": "c",
+            "text": "bigger and faster"
+          }
+        ],
+        "answer": "c"
+      }
+    ]
+  },
+  "twist": {
+    "prompt": "A says: 'It was only drizzle, but after 3 hours my bucket was full.' Is that possible?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Yes"
+      },
+      {
+        "id": "b",
+        "text": "No"
+      }
+    ],
+    "answer": "a",
+    "reason": "Drizzle is light, but over a long time it adds up."
+  },
+  "reveal": {
+    "icon": "thunderstorm",
+    "text": "Tall thunderclouds can reach higher than Mount Everest. That's why monsoon downpours can be so heavy."
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "id": "D2",
+  "title": "Evaporation or condensation?",
+  "concept": "C02",
+  "sides": [
+    {
+      "id": "evaporation",
+      "label": "Evaporation",
+      "icon": "evaporation"
+    },
+    {
+      "id": "condensation",
+      "label": "Condensation",
+      "icon": "condensation"
+    }
+  ],
+  "items": [
+    {
+      "id": "D2_1",
+      "side": "evaporation",
+      "reason": "Water becomes vapour and leaves.",
+      "kind": "text",
+      "text": "Wet clothes dry on the balcony.",
+      "concept": "C01"
+    },
+    {
+      "id": "D2_2",
+      "side": "condensation",
+      "reason": "Vapour in the air cools into drops.",
+      "kind": "text",
+      "text": "Drops appear on a cold bottle.",
+      "concept": "C02"
+    },
+    {
+      "id": "D2_3",
+      "side": "condensation",
+      "reason": "Warm, damp air meets a cool mirror.",
+      "kind": "text",
+      "text": "The bathroom mirror goes foggy.",
+      "concept": "C02"
+    },
+    {
+      "id": "D2_4",
+      "side": "evaporation",
+      "reason": "Heat turns the water into vapour.",
+      "kind": "text",
+      "text": "A puddle vanishes on a sunny day.",
+      "concept": "C01"
+    },
+    {
+      "id": "D2_5",
+      "side": "evaporation",
+      "reason": "The water leaves; the salt can't.",
+      "kind": "text",
+      "text": "Salt is left behind in a salt pan.",
+      "concept": "C01"
+    },
+    {
+      "id": "D2_6",
+      "side": "condensation",
+      "reason": "Rising air cools; vapour turns to droplets.",
+      "kind": "text",
+      "text": "A cloud forms over the Ghats.",
+      "concept": "C02"
+    },
+    {
+      "id": "D2_7",
+      "side": "condensation",
+      "reason": "Cool grass turns vapour into drops.",
+      "kind": "text",
+      "text": "Dew on the grass in the morning.",
+      "concept": "C02"
+    },
+    {
+      "id": "D2_8",
+      "side": "evaporation",
+      "reason": "Wind carries the vapour away.",
+      "kind": "text",
+      "text": "Sweat dries in the breeze.",
+      "concept": "C01"
+    }
+  ]
+}

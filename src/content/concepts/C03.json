@@ -1,0 +1,231 @@
+{
+  "id": "C03",
+  "title": "Drizzle, rain or downpour?",
+  "subtitle": null,
+  "short": "Rain",
+  "trail": "water",
+  "needs": [
+    "C02"
+  ],
+  "icon": "rain",
+  "sim": "SIM_RAIN",
+  "seed": 303,
+  "words": [
+    {
+      "word": "drizzle",
+      "meaning": "Very small drops, smaller than a grain of sugar, falling slowly.",
+      "icon": "drizzle"
+    },
+    {
+      "word": "rain",
+      "meaning": "Bigger drops.",
+      "icon": "rain"
+    },
+    {
+      "word": "downpour",
+      "meaning": "Big, fast, heavy rain.",
+      "icon": "downpour"
+    }
+  ],
+  "hook": {
+    "image": "hook_c03_marinedrive.jpg",
+    "alt": "Marine Drive in drizzle",
+    "icon": "drizzle",
+    "lines": [
+      "Mumbai has all kinds of rain. Some barely wets your hair.",
+      "Some soaks you to the socks in one minute. What makes the difference?"
+    ]
+  },
+  "predict": {
+    "question": "If droplets stay in the cloud longer, will the drops that fall be bigger or smaller?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Bigger",
+        "short": "bigger"
+      },
+      {
+        "id": "b",
+        "text": "Smaller",
+        "short": "smaller"
+      },
+      {
+        "id": "c",
+        "text": "The same",
+        "short": "the same"
+      }
+    ],
+    "answer": "a"
+  },
+  "watch": {
+    "instruction": "Press and hold the cloud. Let go to make it rain.",
+    "duration": 20,
+    "script": [
+      {
+        "t": 0,
+        "hold": 0.6
+      },
+      {
+        "t": 0.1,
+        "caption": "cap1"
+      },
+      {
+        "t": 8,
+        "hold": 2
+      },
+      {
+        "t": 8.1,
+        "caption": "cap2"
+      },
+      {
+        "t": 15,
+        "hold": 3
+      },
+      {
+        "t": 15.1,
+        "caption": "cap3"
+      }
+    ],
+    "captions": {
+      "cap1": "Short hold: tiny drops. That's drizzle.",
+      "cap2": "Longer: droplets bump and join. Rain!",
+      "cap3": "Even longer: big, fast drops. A downpour."
+    }
+  },
+  "explain": {
+    "question": "Why did the drops get bigger?",
+    "correct": {
+      "id": "r1",
+      "text": "Tiny droplets bumped together and joined into bigger drops."
+    },
+    "misconceptions": [
+      {
+        "id": "m_burst",
+        "text": "The cloud got too full and burst like a balloon.",
+        "parentLabel": "Thinks clouds burst"
+      },
+      {
+        "id": "m_squeeze",
+        "text": "The wind squeezed the cloud like a wet sponge.",
+        "parentLabel": "Thinks clouds are squeezed"
+      },
+      {
+        "id": "m_bigcloud",
+        "text": "Bigger clouds always make bigger drops, whatever happens.",
+        "parentLabel": "Thinks cloud size alone sets drop size"
+      },
+      {
+        "id": "m_fast",
+        "text": "Drops grow bigger as they fall through the air.",
+        "parentLabel": "Thinks drops grow while falling"
+      }
+    ],
+    "examples": {
+      "home": "A drizzly July evening on Marine Drive vs a downpour that floods Hindmata.",
+      "india": "Cherrapunji's heavy downpours.",
+      "world": "London is famous for drizzle."
+    },
+    "highlight": {
+      "start": 8,
+      "end": 14,
+      "layer": "cloud_droplets",
+      "caption": "Look inside the cloud. Two little dots become one bigger dot."
+    }
+  },
+  "nameIt": [
+    {
+      "kind": "word",
+      "prompt": "What do we call this?",
+      "promptIcon": "drizzle",
+      "options": [
+        "drizzle",
+        "rain",
+        "downpour"
+      ],
+      "answer": 0
+    },
+    {
+      "kind": "picture",
+      "prompt": "Which rain makes this sound?",
+      "promptSound": "rain_heavy",
+      "options": [
+        "drizzle",
+        "rain",
+        "downpour"
+      ],
+      "optionIcons": [
+        "drizzle",
+        "rain",
+        "downpour"
+      ],
+      "answer": 2
+    }
+  ],
+  "twist": {
+    "question": "Two clouds: one thin and flat, one thick and very tall. Which is more likely to give a downpour?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The thin flat cloud"
+      },
+      {
+        "id": "b",
+        "text": "The thick tall cloud"
+      },
+      {
+        "id": "c",
+        "text": "Both the same"
+      }
+    ],
+    "answer": "b",
+    "reason": "A tall cloud has lots of room for droplets to bump and grow before they fall."
+  },
+  "faq": [
+    {
+      "q": "How small is drizzle?",
+      "a": "Drizzle drops are smaller than half a millimetre, smaller than a grain of sugar."
+    },
+    {
+      "q": "Why does rain make a sound?",
+      "a": "Big drops hit hard and splash. Drizzle is almost silent."
+    },
+    {
+      "q": "What is a cloudburst?",
+      "a": "A very heavy downpour in one small place in a short time."
+    }
+  ],
+  "knowledgePack": "Cloud droplets are tiny. They grow by colliding and joining (coalescence). When too heavy for rising air to hold up, they fall. Drizzle drops are under 0.5 mm and fall slowly; raindrops are about 0.5 mm to 4 mm and fall faster; downpours are heavy rain with large, fast drops. Tall, thick clouds (like thunderclouds) let drops grow big. Raindrops are not tear-shaped: small ones are round, big ones flatten like a bun.",
+  "labChallenges": [
+    {
+      "id": "c03_l1",
+      "type": "reach_state",
+      "text": "Make the puddle overflow.",
+      "check": "puddleLevel >= 1"
+    },
+    {
+      "id": "c03_l2",
+      "type": "is_it_possible",
+      "text": "Can drizzle fill a puddle if it lasts long enough?",
+      "answer": "yes",
+      "reason": "Slowly. Drizzle is light, but it adds up."
+    }
+  ],
+  "mission": {
+    "text": "Next time it rains, hold a piece of dark paper or cloth outside for 5 seconds. Small spots or big splashes? Take a grown-up with you.",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Small spots (drizzle)"
+      },
+      {
+        "id": "b",
+        "text": "Medium spots (rain)"
+      },
+      {
+        "id": "c",
+        "text": "Big splashes (downpour)"
+      }
+    ],
+    "debrief": "You measured the drops yourself. That's real weather science."
+  }
+}

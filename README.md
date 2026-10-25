@@ -19,6 +19,15 @@ eas build -p android --profile preview
 
 The APK link appears when the build finishes.
 
+### Build: arm64-only
+
+The `development` and `preview` profiles build for `arm64-v8a` only, set via `ORG_GRADLE_PROJECT_reactNativeArchitectures` in `eas.json`. This roughly halves EAS build time (the native compile for Skia, Reanimated and GL is most of it) and shrinks the APK.
+
+- Works on: any modern 64-bit Android phone.
+- Won't install on: x86/x86_64 emulators, or 32-bit phones (some budget Android Go devices). Check a phone with `adb shell getprop ro.product.cpu.abi`; it should print `arm64-v8a`.
+- To build for all architectures, remove the `env` line from the profile.
+- The `production` profile is untouched: it builds a Play Store AAB for all architectures. An AAB can't be installed directly on a phone; use `preview` for that.
+
 ## First launch
 
 1. Setup asks for a 4-digit Parent PIN (twice), an optional Gemini key, then the first child profile.

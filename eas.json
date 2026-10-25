@@ -1,8 +1,16 @@
 {
   "cli": { "version": ">= 15.0.0", "appVersionSource": "remote" },
   "build": {
-    "development": { "developmentClient": true, "distribution": "internal" },
-    "preview": { "distribution": "internal", "android": { "buildType": "apk" } },
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": { "ORG_GRADLE_PROJECT_reactNativeArchitectures": "arm64-v8a" }
+    },
+    "preview": {
+      "distribution": "internal",
+      "android": { "buildType": "apk" },
+      "env": { "ORG_GRADLE_PROJECT_reactNativeArchitectures": "arm64-v8a" }
+    },
     "production": { "android": { "buildType": "app-bundle" } }
   }
 }

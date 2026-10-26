@@ -100,6 +100,12 @@ export const SOUND_FILES = {
 } as const;
 export type SoundId = keyof typeof SOUND_FILES;
 
-export const EARTH_TEXTURE = require('../../assets/textures/earth_2k.jpg');
-export const EQUAL_EARTH_MAP = require('../../assets/maps/map_equalearth.png');
+export const EARTH_TEXTURES = {
+  day: require('../../assets/textures/earth_day_4k.jpg'),
+  night: require('../../assets/textures/earth_night_4k.jpg'),
+  clouds: require('../../assets/textures/earth_clouds_4k.jpg'),
+  spec: require('../../assets/textures/earth_spec_2k.jpg'),
+  bump: require('../../assets/textures/earth_bump_2k.jpg'),
+} as const;
+export const EQUAL_EARTH_MAP = require('../../assets/maps/map_equalearth_4k.jpg');
 export const SPLASH_IMAGE = require('../../assets/splash/splash@1242.png');

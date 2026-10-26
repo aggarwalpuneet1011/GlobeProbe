@@ -40,13 +40,14 @@ export default function Globe() {
   const [found, setFound] = useState<string[]>([]);
   const [card, setCard] = useState<Place | null>(null);
   const [fails, setFails] = useState(0);
+  const [flat, setFlat] = useState(false);
   const [findIdx, setFindIdx] = useState(0);
   const [findMsg, setFindMsg] = useState<{ text: string; ok: boolean } | null>(null);
 
   const load = useCallback(() => { if (profile) void Q.placesFound(app.db, profile.id).then(setFound).catch((e) => logError('globe-found', e)); }, [app.db, profile?.id]); // eslint-disable-line react-hooks/exhaustive-deps
   useFocusEffect(useCallback(() => { load(); setFocused(true); return () => setFocused(false); }, [load]));
 
-  const pins: Pin[] = useMemo(() => PLACES.places.map((p) => ({ id: p.id, lat: p.lat, lon: p.lon, found: found.includes(p.id) })), [found]);
+  const pins: Pin[] = useMemo(() => PLACES.places.map((p) => ({ id: p.id, lat: p.lat, lon: p.lon, found: found.includes(p.id), name: p.name, country: p.country })), [found]);
   const progMap = useMemo(() => new Map(app.progress.map((p) => [p.conceptId, p])), [app.progress]);
 
   // Deep links: ?place=ID (open its card) or ?lat=&lon= (fly there, e.g. from the Sky rain race).
@@ -82,16 +83,17 @@ export default function Globe() {
       <T v="h1">Globe</T>
       <View style={{ flexDirection: 'row', gap: 8, flexWrap: 'wrap' }}>
         <Chip label={GLOBE.places} icon="pin" selected={showPins} onPress={() => setShowPins((v) => !v)} />
-        {fails < 2 ? <Chip label={GLOBE.dayNight} icon="day_night" selected={dayNight} onPress={() => setDayNight((v) => !v)} /> : null}
+        {fails < 3 && !flat ? <Chip label={GLOBE.dayNight} icon="day_night" selected={dayNight} onPress={() => setDayNight((v) => !v)} /> : null}
+        {fails < 3 ? <Chip label={GLOBE.flatMap} icon="layers" selected={flat} onPress={() => setFlat((v) => !v)} /> : null}
       </View>
       <T color="#4A5565">{DIARY.places.replace('{n}', String(found.length))}</T>
 
       <View style={{ alignItems: 'center' }}>
-        {fails >= 2 ? (
+        {fails >= 3 || flat ? (
           <FlatGlobe size={size} pins={pins} showPins={showPins} onPin={onPin} onTapLatLon={onTap} />
         ) : (
-          <GlobeView ref={api} key={`gl${fails}`} size={size} pins={pins} showPins={showPins} dayNight={dayNight} active={focused} plan={fails === 0 ? 'A' : 'B'}
-            onPin={onPin} onTapLatLon={onTap} onFail={() => setFails((n) => n + 1)} />
+          <GlobeView ref={api} key={`gl${fails}`} size={size} pins={pins} showPins={showPins} dayNight={dayNight} active={focused} level={(3 - fails) as 1 | 2 | 3}
+            onPin={onPin} onTapLatLon={onTap} onFail={() => setFails((n) => Math.min(3, n + 1))} />
         )}
       </View>
 

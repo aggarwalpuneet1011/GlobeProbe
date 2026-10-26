@@ -1,5 +1,5 @@
 import { test, ok, eq, near, done } from './harness';
-import { latLonToVec3, vec3ToLatLon, subSolar, centerOn, rotateVec, haversineKm, equalEarthUV, equalEarthInverse, clampDist, clampPitch, DIST_MIN, DIST_MAX, MUMBAI, EQUAL_EARTH_ASPECT } from '@/three/globeMath';
+import { latLonToVec3, vec3ToLatLon, subSolar, centerOn, rotateVec, haversineKm, equalEarthUV, equalEarthInverse, clampDist, clampPitch, DIST_MIN, DIST_MAX, PITCH_LIMIT, dragScale, facingAngle, isFacingCamera, DIST_DEFAULT, MUMBAI, EQUAL_EARTH_ASPECT } from '@/three/globeMath';
 
 test('lat/lon <-> sphere point round trips and matches the texture seam (lon -180 at u = 0)', () => {
   for (const [la, lo] of [[0, 0], [19.08, 72.88], [-33.9, 151.2], [60, -120], [-70, 179]]) {
@@ -21,7 +21,7 @@ test('sub-solar point: equinox noon UTC is near (0, 0); June solstice is near +2
 });
 test('distances and limits', () => {
   near(haversineKm(19.076, 72.878, 28.61, 77.21), 1150, 40);
-  eq(clampDist(1), DIST_MIN); eq(clampDist(9), DIST_MAX); near(clampPitch(5), (60 * Math.PI) / 180, 1e-9);
+  eq(clampDist(1), DIST_MIN); eq(clampDist(9), DIST_MAX); near(clampPitch(5), PITCH_LIMIT, 1e-9);
   ok(haversineKm(MUMBAI.lat, MUMBAI.lon, 8.08, 77.54) > 700, 'Kanyakumari is farther than the 700 km find radius');
 });
 test('Equal Earth: centre, edges, and spots matching the pre-rendered map', () => {
@@ -31,5 +31,17 @@ test('Equal Earth: centre, edges, and spots matching the pre-rendered map', () =
   near(EQUAL_EARTH_ASPECT, 2.0546, 1e-3);
   const inv = equalEarthInverse(m.u, m.v)!; near(inv.lat, 19, 1.1); near(inv.lon, 73, 1.1);
   eq(equalEarthInverse(0.01, 0.01), null);
+});
+test('zoom range leaves room to zoom out and in; drag slows when zoomed in', () => {
+  ok(DIST_MIN < 1.6 && DIST_MAX >= 5 && DIST_DEFAULT > 3 && DIST_DEFAULT < DIST_MAX, 'wide zoom range');
+  ok(1 / DIST_DEFAULT < Math.sin((40 / 2) * Math.PI / 180) * 0.9, 'whole globe fits in the 40 degree field of view at the default distance');
+  near(dragScale(DIST_DEFAULT), 1, 1e-9); ok(dragScale(DIST_MIN) < 0.35, 'slow when close'); ok(dragScale(DIST_MAX) > 1, 'faster when far');
+});
+test('facingAngle is 0 for the centred place and grows as the globe turns; back-face test', () => {
+  const { yaw, pitch } = centerOn(19.076, 72.878);
+  near(facingAngle(19.076, 72.878, yaw, pitch), 0, 1e-6);
+  ok(facingAngle(19.076 - 0, 72.878 - 90, yaw, pitch) > 1.0, 'a place 90 degrees away is far from centre');
+  ok(facingAngle(-19.076, 72.878 - 180, yaw, pitch) > 2.5, 'the antipode is on the far side');
+  ok(isFacingCamera(0.9, 3.4) && !isFacingCamera(0.1, 3.4), 'horizon cut-off at distance 3.4');
 });
 done();

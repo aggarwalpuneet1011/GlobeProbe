@@ -161,7 +161,7 @@ export const WHY = {
 };
 
 export const GLOBE = {
-  places: 'Places', dayNight: 'Day / Night', borders: 'Borders',
+  places: 'Places', dayNight: 'Day / Night', borders: 'Borders', flatMap: 'Flat map',
   goToStop: 'Go to Stop',
   findPrefix: 'Find',
   found: 'Found it!',

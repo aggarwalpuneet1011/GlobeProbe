@@ -1,9 +1,9 @@
 // Globe maths. Pure functions so they run under node tests.
 export const DEG = Math.PI / 180;
-export const DIST_MIN = 2.2;
-export const DIST_MAX = 4.0;
-export const DIST_DEFAULT = 3.0;
-export const PITCH_LIMIT = 60 * DEG;
+export const DIST_MIN = 1.45;      // camera distance from the centre of a radius-1 Earth: close enough to read a country
+export const DIST_MAX = 6.0;       // far enough to see the whole globe with space around it
+export const DIST_DEFAULT = 3.4;
+export const PITCH_LIMIT = 80 * DEG;
 export const DRAG_DEG_PER_DP = 0.4;
 export const IDLE_SECONDS = 6;
 export const AUTO_DEG_PER_S = 4;
@@ -47,6 +47,15 @@ export function rotateVec([x, y, z]: V3, yaw: number, pitch: number): V3 {
 }
 
 export const clampDist = (d: number) => Math.min(DIST_MAX, Math.max(DIST_MIN, d));
+/** Drag speed multiplier: slower when zoomed in (so a finger moves the surface under it), faster when zoomed out. 1 at the default distance. */
+export const dragScale = (dist: number) => Math.min(1.4, Math.max(0.2, (dist - 1) / (DIST_DEFAULT - 1)));
+/** Angle (radians) between a place and the point the camera is looking at, given the current yaw/pitch. 0 = dead centre, > pi/2 = far side. */
+export function facingAngle(latDeg: number, lonDeg: number, yaw: number, pitch: number): number {
+  const [x, y, z] = rotateVec(latLonToVec3(latDeg, lonDeg), yaw, pitch);
+  return Math.acos(Math.max(-1, Math.min(1, z / (Math.hypot(x, y, z) || 1))));
+}
+/** A point on the sphere is visible to a camera at distance d on +z when its z (in view space) exceeds 1/d. */
+export const isFacingCamera = (zView: number, dist: number) => zView > 1 / dist + 0.01;
 export const clampPitch = (p: number) => Math.min(PITCH_LIMIT, Math.max(-PITCH_LIMIT, p));
 export const wrapAngle = (a: number) => { let x = a; while (x > Math.PI) x -= 2 * Math.PI; while (x < -Math.PI) x += 2 * Math.PI; return x; };
 export const easeInOut = (t: number) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);

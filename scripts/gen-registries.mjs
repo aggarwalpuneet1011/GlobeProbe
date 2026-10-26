@@ -17,7 +17,7 @@ out += `export const BINDU_IMAGES = {\n${bindu.map((n) => `  ${q(n)}: require('.
 out += `export type BinduExpression = keyof typeof BINDU_IMAGES;\n\n`;
 out += `export const SOUND_FILES = {\n${sounds.map((n) => `  ${q(n)}: require('../../assets/sounds/${n}.ogg'),`).join('\n')}\n} as const;\n`;
 out += `export type SoundId = keyof typeof SOUND_FILES;\n\n`;
-out += `export const EARTH_TEXTURE = require('../../assets/textures/earth_2k.jpg');\nexport const EQUAL_EARTH_MAP = require('../../assets/maps/map_equalearth.png');\n`;
+out += `export const EARTH_TEXTURES = {\n  day: require('../../assets/textures/earth_day_4k.jpg'),\n  night: require('../../assets/textures/earth_night_4k.jpg'),\n  clouds: require('../../assets/textures/earth_clouds_4k.jpg'),\n  spec: require('../../assets/textures/earth_spec_2k.jpg'),\n  bump: require('../../assets/textures/earth_bump_2k.jpg'),\n} as const;\nexport const EQUAL_EARTH_MAP = require('../../assets/maps/map_equalearth_4k.jpg');\n`;
 out += `export const SPLASH_IMAGE = require('../../assets/splash/splash@1242.png');\n`;
 fs.writeFileSync(path.join(root, 'src/ui/assets.ts'), out);
 
